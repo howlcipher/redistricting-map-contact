@@ -15,6 +15,8 @@ From a game-theory perspective, the public availability of this tool fundamental
 
 The first leaders and organizations to adopt and champion these algorithmic baselines will define the modern standard of fairness. Conversely, those attempting to defend heavily gerrymandered maps will now face undeniable, publicly accessible proof of bias resting directly in the hands of the press and their political opposition.
 
+What makes this release particularly striking is that this entire ecosystem was built from the ground up in less than a week. It serves as a living proof of concept that a viable, mathematically rigorous path forward away from gerrymandering is not only possible, but readily accessible today. 
+
 By removing human bias from the equation, we can ensure every vote counts equally. Given your role and influence, I believe you will find this tool immensely valuable—whether for evaluating current maps, guiding future redistricting legislation, or informing the public. 
 
 I would be happy to discuss the methodology, the open-source code, or how you can leverage this data. 
