@@ -8,14 +8,6 @@
     "status": "Pending"
   },
   {
-    "id": "47",
-    "category": "Candidates for Office",
-    "title": "President of the United States",
-    "name": "Donald Trump",
-    "contactRoute": "https://www.whitehouse.gov/contact/",
-    "status": "Pending"
-  },
-  {
     "id": "41",
     "category": "Candidates for Office",
     "title": "Candidate for U.S. Senate (ME)",
@@ -24,27 +16,11 @@
     "status": "Pending"
   },
   {
-    "id": "46",
-    "category": "Candidates for Office",
-    "title": "Vice President of the United States",
-    "name": "JD Vance",
-    "contactRoute": "https://www.whitehouse.gov/contact/",
-    "status": "Pending"
-  },
-  {
     "id": "42",
     "category": "Candidates for Office",
     "title": "Candidate for U.S. House (CO-1)",
     "name": "Milat Kiros",
     "contactRoute": "Contact Form: kirosforco.com",
-    "status": "Pending"
-  },
-  {
-    "id": "16",
-    "category": "Candidates for Office",
-    "title": "Mayor of New York City",
-    "name": "Zohran Mamdani",
-    "contactRoute": "https://www.nyc.gov/office-of-the-mayor/contact-the-mayor.page",
     "status": "Pending"
   },
   {
@@ -77,6 +53,14 @@
     "title": "Senate Minority Leader",
     "name": "Chuck Schumer",
     "contactRoute": "https://www.schumer.senate.gov/contact/email-chuck",
+    "status": "Pending"
+  },
+  {
+    "id": "47",
+    "category": "Government & Elected Officials",
+    "title": "President of the United States",
+    "name": "Donald Trump",
+    "contactRoute": "https://www.whitehouse.gov/contact/",
     "status": "Pending"
   },
   {
@@ -133,6 +117,14 @@
     "title": "US Representative (MN)",
     "name": "Ilhan Omar",
     "contactRoute": "https://omar.house.gov/contact",
+    "status": "Pending"
+  },
+  {
+    "id": "46",
+    "category": "Government & Elected Officials",
+    "title": "Vice President of the United States",
+    "name": "JD Vance",
+    "contactRoute": "https://www.whitehouse.gov/contact/",
     "status": "Pending"
   },
   {
@@ -206,6 +198,14 @@
     "contactRoute": "https://evers.wi.gov/Pages/Connect.aspx",
     "status": "Pending",
     "id": "54"
+  },
+  {
+    "id": "16",
+    "category": "Government & Elected Officials",
+    "title": "Mayor of New York City",
+    "name": "Zohran Mamdani",
+    "contactRoute": "https://www.nyc.gov/office-of-the-mayor/contact-the-mayor.page",
+    "status": "Pending"
   },
   {
     "id": "33",
