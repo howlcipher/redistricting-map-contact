@@ -355,6 +355,20 @@ h1, h2, h3, .stat-value, .stat-label, th, .category-row td, .repo-link, .icon-bt
     padding: 1rem;
   }
   
+  .header-actions {
+    position: static;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
   .controls {
     flex-direction: column;
     gap: 1rem;
