@@ -22,4 +22,5 @@ I would be happy to discuss the methodology, the open-source code, or how you ca
 Best regards,
 
 [Your Name]  
-[Your Contact Information]  
+**Project RedrawUS**  
+ProjectRedrawUS@gmail.com  
