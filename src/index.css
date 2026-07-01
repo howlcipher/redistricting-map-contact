@@ -23,6 +23,7 @@
   --status-sent: #6A1B9A;
   --status-replied: #1B5E20;
   --status-unresponsive: #B31942;
+  --status-undeliverable: #616161;
 
   --font-retro: 'Courier Prime', 'Courier New', monospace;
   --font-sans: 'Inter', system-ui, sans-serif;
@@ -51,6 +52,7 @@
   --status-sent: #B388FF;
   --status-replied: #4CAF50;
   --status-unresponsive: #E23D5F;
+  --status-undeliverable: #9E9E9E;
 }
 
 * {
@@ -332,6 +334,11 @@ h1, h2, h3, .stat-value, .stat-label, th, .category-row td, .repo-link, .icon-bt
   background: #FFEBEE; 
   color: var(--status-unresponsive); 
   border-color: var(--status-unresponsive);
+}
+.status-Undeliverable { 
+  background: #F5F5F5; 
+  color: var(--status-undeliverable); 
+  border-color: var(--status-undeliverable);
 }
 
 [data-theme="dark"] .status-badge {

@@ -120,7 +120,7 @@ function App() {
 
   /**
    * Cycles a contact's outreach status sequentially:
-   * Pending -> Drafted -> Sent -> Replied -> Unresponsive
+   * Pending -> Drafted -> Sent -> Replied -> Unresponsive -> Undeliverable
    * Updates state optimistically before pushing to GitHub.
    * 
    * @param id The unique identifier of the contact.
@@ -131,7 +131,7 @@ function App() {
       return;
     }
     
-    const statuses: ContactStatus[] = ['Pending', 'Drafted', 'Sent', 'Replied', 'Unresponsive'];
+    const statuses: ContactStatus[] = ['Pending', 'Drafted', 'Sent', 'Replied', 'Unresponsive', 'Undeliverable'];
     const updatedContacts = contacts.map(c => {
       if (c.id === id) {
         const currentIndex = statuses.indexOf(c.status);
@@ -188,7 +188,7 @@ function App() {
     return {
       total: contacts.length,
       pending: contacts.filter(c => c.status === 'Pending').length,
-      sent: contacts.filter(c => c.status === 'Sent' || c.status === 'Replied' || c.status === 'Unresponsive').length,
+      sent: contacts.filter(c => c.status === 'Sent' || c.status === 'Replied' || c.status === 'Unresponsive' || c.status === 'Undeliverable').length,
       replied: contacts.filter(c => c.status === 'Replied').length
     };
   }, [contacts]);

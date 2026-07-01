@@ -1,4 +1,4 @@
-export type ContactStatus = 'Pending' | 'Drafted' | 'Sent' | 'Replied' | 'Unresponsive';
+export type ContactStatus = 'Pending' | 'Drafted' | 'Sent' | 'Replied' | 'Unresponsive' | 'Undeliverable';
 
 export interface Contact {
   id: string;
