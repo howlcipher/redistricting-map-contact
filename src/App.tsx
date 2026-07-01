@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Search, Mail, Building, Users, Activity, Sun, Moon, Code, Lock, Unlock, Loader2, Landmark, Megaphone, MessageSquare, X } from 'lucide-react';
+import { Search, Mail, Building, Users, Activity, Sun, Moon, Code, Lock, Unlock, Loader2, Landmark, Megaphone, MessageSquare, X, RotateCcw } from 'lucide-react';
 import type { Contact, ContactStatus } from './data';
 import './index.css';
 
@@ -372,6 +372,23 @@ function App() {
                               title="View/Edit Response"
                             >
                               <MessageSquare size={14} /> View
+                            </button>
+                          )}
+
+                          {githubToken && contact.status !== 'Pending' && (
+                            <button 
+                              className="icon-btn" 
+                              style={{ padding: '0.25rem 0.5rem', fontSize: '0.75rem', color: 'var(--text-secondary)' }}
+                              onClick={() => {
+                                const updatedContacts = contacts.map(c => 
+                                  c.id === contact.id ? { ...c, status: 'Pending' as ContactStatus } : c
+                                );
+                                setContacts(updatedContacts);
+                                updateStatusOnGithub(updatedContacts);
+                              }}
+                              title="Revert to Pending"
+                            >
+                              <RotateCcw size={14} /> Revert
                             </button>
                           )}
                         </div>
