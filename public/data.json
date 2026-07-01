@@ -349,7 +349,7 @@
     "title": "Investigative Journalist",
     "name": "Ryan Grim",
     "contactRoute": "ryan@dropsitenews.com",
-    "status": "Drafted"
+    "status": "Sent"
   },
   {
     "id": "31",
@@ -357,7 +357,7 @@
     "title": "Host of The Majority Report",
     "name": "Sam Seder",
     "contactRoute": "majorityreporter@gmail.com",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "id": "28",
@@ -365,7 +365,7 @@
     "title": "Founder of Tucker Carlson Network",
     "name": "Tucker Carlson",
     "contactRoute": "info@tuckercarlson.com",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "id": "17",
@@ -373,7 +373,7 @@
     "title": "CNBC Anchor and NYT Columnist",
     "name": "Andrew Ross Sorkin",
     "contactRoute": "andrew.sorkin@nytimes.com",
-    "status": "Pending"
+    "status": "Drafted"
   },
   {
     "id": "24",
