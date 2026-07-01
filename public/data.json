@@ -357,7 +357,7 @@
     "title": "Host of The Majority Report",
     "name": "Sam Seder",
     "contactRoute": "majorityreporter@gmail.com",
-    "status": "Replied"
+    "status": "Undeliverable"
   },
   {
     "id": "28",
@@ -397,7 +397,7 @@
     "title": "Senior Editor at Cook Political Report",
     "name": "Dave Wasserman",
     "contactRoute": "dave@cookpolitical.com",
-    "status": "Sent"
+    "status": "Replied"
   },
   {
     "category": "Media & Data Analytics",
