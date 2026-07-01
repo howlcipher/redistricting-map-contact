@@ -421,7 +421,7 @@
     "title": "Senior Data Reporter",
     "name": "Harry Enten",
     "contactRoute": "harry.enten@cnn.com",
-    "status": "Drafted"
+    "status": "Sent"
   },
   {
     "id": "23",
@@ -429,7 +429,7 @@
     "title": "Fox News Host and Contributor",
     "name": "Jessica Tarlov",
     "contactRoute": "jessica.tarlov@foxnews.com",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "id": "20",
@@ -437,14 +437,14 @@
     "title": "Founder of Silver Bulletin",
     "name": "Nate Silver",
     "contactRoute": "nate@natesilver.net",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "category": "Media & Data Analytics",
     "title": "MSNBC Host",
     "name": "Rachel Maddow",
     "contactRoute": "rachel@msnbc.com",
-    "status": "Pending",
+    "status": "Drafted",
     "id": "56"
   },
   {
