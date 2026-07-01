@@ -8,6 +8,7 @@ const REPO_NAME = 'redistricting-map-contact';
 const FILE_PATH = 'public/data.json';
 
 function App() {
+  // --- Core Application State ---
   const [contacts, setContacts] = useState<Contact[]>([]);
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   const [searchQuery, setSearchQuery] = useState('');
@@ -22,11 +23,19 @@ function App() {
   const [selectedMessageContact, setSelectedMessageContact] = useState<Contact | null>(null);
   const [editingMessage, setEditingMessage] = useState<string | null>(null);
 
+  /**
+   * Updates the global data-theme attribute on the root HTML element
+   * to trigger CSS variable swaps for light/dark mode.
+   */
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
-  // Initial load
+  /**
+   * Fetches the initial data payload on component mount.
+   * If logged in (githubToken exists), bypasses cache and hits the GitHub API 
+   * to get the most up-to-date data.json file directly from the repo.
+   */
   useEffect(() => {
     // Fetch from GitHub API if authenticated, else fetch static
     const timestamp = new Date().getTime();
@@ -67,6 +76,13 @@ function App() {
     window.location.reload();
   };
 
+  /**
+   * Commits and pushes the modified contacts list back to GitHub.
+   * It performs a GET request to fetch the latest file SHA to prevent 409 commit conflicts,
+   * then encodes the updated JSON to Base64 and executes a PUT request.
+   * 
+   * @param updatedContacts The new array of contacts to persist.
+   */
   const updateStatusOnGithub = async (updatedContacts: Contact[]) => {
     if (!githubToken) return;
     setIsSaving(true);
@@ -102,6 +118,13 @@ function App() {
     }
   };
 
+  /**
+   * Cycles a contact's outreach status sequentially:
+   * Pending -> Drafted -> Sent -> Replied -> Unresponsive
+   * Updates state optimistically before pushing to GitHub.
+   * 
+   * @param id The unique identifier of the contact.
+   */
   const handleStatusChange = (id: string) => {
     if (!githubToken) {
       alert("You must be logged in as an Admin to change statuses. Click Login in the top right.");
@@ -125,6 +148,9 @@ function App() {
     updateStatusOnGithub(updatedContacts);
   };
 
+  /**
+   * Saves the public response text for a 'Replied' contact and persists it to GitHub.
+   */
   const saveMessage = () => {
     if (!githubToken || !selectedMessageContact) return;
     
@@ -141,6 +167,10 @@ function App() {
     setEditingMessage(null);
   };
 
+  /**
+   * Memoized filtered list of contacts matching the search query 
+   * across Name, Title, and Category.
+   */
   const filteredContacts = useMemo(() => {
     if (!Array.isArray(contacts)) return [];
     return contacts.filter(c => 
@@ -150,6 +180,9 @@ function App() {
     );
   }, [contacts, searchQuery]);
 
+  /**
+   * Memoized dashboard statistics to prevent unnecessary recalculation on every render.
+   */
   const stats = useMemo(() => {
     if (!Array.isArray(contacts)) return { total: 0, pending: 0, sent: 0, replied: 0 };
     return {
