@@ -332,7 +332,7 @@
     "title": "Redistricting Org",
     "name": "National Republican Redistricting Trust",
     "contactRoute": "info@thenrrt.com",
-    "status": "Drafted",
+    "status": "Sent",
     "id": "64"
   },
   {
@@ -340,7 +340,7 @@
     "title": "Anti-Corruption Org",
     "name": "RepresentUs",
     "contactRoute": "info@represent.us",
-    "status": "Pending",
+    "status": "Sent",
     "id": "62"
   },
   {
@@ -349,7 +349,7 @@
     "title": "Investigative Journalist",
     "name": "Ryan Grim",
     "contactRoute": "ryan@dropsitenews.com",
-    "status": "Pending"
+    "status": "Drafted"
   },
   {
     "id": "31",
