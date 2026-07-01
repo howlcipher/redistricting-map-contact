@@ -3,7 +3,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import App from './App';
 
 // Mock fetch globally to prevent network requests during testing
-global.fetch = vi.fn(() =>
+(globalThis as any).fetch = vi.fn(() =>
   Promise.resolve({
     json: () => Promise.resolve([
       { id: '1', category: 'Government & Elected Officials', title: 'Speaker of the House', name: 'Mike Johnson', contactRoute: 'Congressional contact page', status: 'Pending' }

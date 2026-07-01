@@ -29,7 +29,7 @@ function App() {
       ? `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}` 
       : `${import.meta.env.BASE_URL}data.json?t=${new Date().getTime()}`;
 
-    const headers = githubToken ? { Authorization: `token ${githubToken}` } : {};
+    const headers: HeadersInit = githubToken ? { Authorization: `token ${githubToken}` } : {};
 
     fetch(fetchUrl, { headers })
       .then(res => res.json())
