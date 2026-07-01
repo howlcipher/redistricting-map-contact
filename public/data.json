@@ -373,7 +373,7 @@
     "title": "CNBC Anchor and NYT Columnist",
     "name": "Andrew Ross Sorkin",
     "contactRoute": "andrew.sorkin@nytimes.com",
-    "status": "Drafted"
+    "status": "Sent"
   },
   {
     "id": "24",
@@ -381,14 +381,14 @@
     "title": "Fox Business Host",
     "name": "Charles Payne",
     "contactRoute": "charles.payne@foxbusiness.com",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "category": "Media & Data Analytics",
     "title": "Creator of Dave's Redistricting",
     "name": "Dave Bradlee",
     "contactRoute": "feedback@davesredistricting.org",
-    "status": "Pending",
+    "status": "Sent",
     "id": "55"
   },
   {
