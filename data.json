@@ -8,6 +8,14 @@
     "status": "Pending"
   },
   {
+    "name": "Beto O'Rourke",
+    "category": "Candidates for Office",
+    "contactTitle": "Political Advocate / Candidate (TX)",
+    "contactRoute": "https://poweredxpeople.org/contact/",
+    "status": "Pending",
+    "id": "72"
+  },
+  {
     "id": "41",
     "category": "Candidates for Office",
     "title": "Candidate for U.S. Senate (ME)",
@@ -16,12 +24,28 @@
     "status": "Pending"
   },
   {
+    "name": "Katie Porter",
+    "category": "Candidates for Office",
+    "contactTitle": "Consumer Advocate / Candidate (CA)",
+    "contactRoute": "https://katieporter.com/contact/",
+    "status": "Pending",
+    "id": "73"
+  },
+  {
     "id": "42",
     "category": "Candidates for Office",
     "title": "Candidate for U.S. House (CO-1)",
     "name": "Milat Kiros",
     "contactRoute": "Contact Form: kirosforco.com",
     "status": "Pending"
+  },
+  {
+    "name": "Stacey Abrams",
+    "category": "Candidates for Office",
+    "contactTitle": "Voting Rights Advocate / Candidate (GA)",
+    "contactRoute": "https://fairfight.com/contact/",
+    "status": "Pending",
+    "id": "71"
   },
   {
     "id": "11",
