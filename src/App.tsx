@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Search, Mail, Building, Users, Activity, Sun, Moon, Code, Lock, Unlock, Loader2, Landmark, Megaphone, MessageSquare, X, RotateCcw } from 'lucide-react';
+import { Search, Mail, Building, Users, Activity, Sun, Moon, Code, Lock, Unlock, Loader2, Landmark, Megaphone, MessageSquare, X, RotateCcw, Check } from 'lucide-react';
 import type { Contact, ContactStatus } from './data';
 import './index.css';
 
@@ -22,6 +22,7 @@ function App() {
   // Message Modal State
   const [selectedMessageContact, setSelectedMessageContact] = useState<Contact | null>(null);
   const [editingMessage, setEditingMessage] = useState<string | null>(null);
+  const [saveSuccess, setSaveSuccess] = useState(false);
 
   /**
    * Updates the global data-theme attribute on the root HTML element
@@ -110,6 +111,9 @@ function App() {
           sha: sha
         })
       });
+      
+      setSaveSuccess(true);
+      setTimeout(() => setSaveSuccess(false), 3000);
     } catch (err) {
       console.error('Failed to save to GitHub:', err);
       alert('Failed to save changes. Check your token permissions.');
@@ -207,6 +211,12 @@ function App() {
 
   return (
     <div className="dashboard-container">
+      {saveSuccess && (
+        <div className="toast-notification">
+          <Check size={16} /> Saved to Database
+        </div>
+      )}
+
       {showAuthModal && (
         <div className="modal-overlay" onClick={() => setShowAuthModal(false)}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>

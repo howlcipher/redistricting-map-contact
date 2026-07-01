@@ -590,3 +590,28 @@ h1, h2, h3, .stat-value, .stat-label, th, .category-row td, .repo-link, .icon-bt
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.toast-notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--status-replied);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  z-index: 9999;
+  box-shadow: 4px 4px 0 var(--card-border);
+  border: 2px solid var(--card-border);
+  animation: slideDown 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes slideDown {
+  from { top: -50px; opacity: 0; }
+  to { top: 20px; opacity: 1; }
+}
