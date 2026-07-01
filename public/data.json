@@ -281,7 +281,7 @@
   },
   {
     "id": "36",
-    "category": "Independent Media & Organizations",
+    "category": "Political Parties",
     "title": "Democratic National Committee",
     "name": "DNC",
     "contactRoute": "https://democrats.org/contact-us/",
@@ -289,7 +289,7 @@
   },
   {
     "id": "37",
-    "category": "Independent Media & Organizations",
+    "category": "Political Parties",
     "title": "Republican National Committee",
     "name": "RNC",
     "contactRoute": "https://gop.com/contact-us/",
@@ -297,7 +297,7 @@
   },
   {
     "id": "38",
-    "category": "Independent Media & Organizations",
+    "category": "Political Parties",
     "title": "Political Organization",
     "name": "DSA Party",
     "contactRoute": "info@dsausa.org",
@@ -305,7 +305,7 @@
   },
   {
     "id": "39",
-    "category": "Independent Media & Organizations",
+    "category": "Political Parties",
     "title": "Political Organization",
     "name": "Our Revolution",
     "contactRoute": "info@ourrevolution.com",
@@ -374,5 +374,29 @@
     "name": "Donald Trump",
     "contactRoute": "https://www.whitehouse.gov/contact/",
     "status": "Pending"
+  },
+  {
+    "category": "Political Parties",
+    "title": "Political Party",
+    "name": "Reform Party",
+    "contactRoute": "info@reformparty.org",
+    "status": "Pending",
+    "id": "48"
+  },
+  {
+    "category": "Political Parties",
+    "title": "Political Party",
+    "name": "Libertarian Party",
+    "contactRoute": "info@lp.org",
+    "status": "Pending",
+    "id": "49"
+  },
+  {
+    "category": "Political Parties",
+    "title": "Political Party",
+    "name": "Green Party",
+    "contactRoute": "office@gp.org",
+    "status": "Pending",
+    "id": "50"
   }
 ]
