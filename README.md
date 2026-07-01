@@ -50,3 +50,7 @@ npm run deploy
 
 ## Email Draft
 A draft of the email to be used for outreach is included in `email_draft.md`.
+
+## Support
+If you like this project, don't buy me a coffee—make a donation instead! 
+**[Donate to the Arizzo Foundation](https://arizzofoundation.org/donate)**
