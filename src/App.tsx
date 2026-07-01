@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Search, Mail, Building, Users, Activity, Sun, Moon, Code, Lock, Unlock, Loader2, Landmark } from 'lucide-react';
+import { Search, Mail, Building, Users, Activity, Sun, Moon, Code, Lock, Unlock, Loader2, Landmark, Megaphone } from 'lucide-react';
 import type { Contact, ContactStatus } from './data';
 import './index.css';
 
@@ -270,6 +270,7 @@ function App() {
                         {category === 'Media & Data Analytics' && <Activity size={16} />}
                         {category === 'Independent Media & Organizations' && <Users size={16} />}
                         {category === 'Political Parties' && <Landmark size={16} />}
+                        {category === 'Candidates for Office' && <Megaphone size={16} />}
                         {category}
                       </div>
                     </td>
