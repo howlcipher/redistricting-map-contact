@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { Search, Mail, Building, Users, Activity, Sun, Moon, Code, Lock, Unlock, Loader2, Landmark, Megaphone, MessageSquare, X, RotateCcw, Check, Plus } from 'lucide-react';
+import { Search, Mail, Building, Users, Activity, Sun, Moon, Code, Lock, Unlock, Loader2, Landmark, Megaphone, MessageSquare, X, RotateCcw, Check, Plus, Edit2 } from 'lucide-react';
 import type { Contact, ContactStatus } from './data';
 import './index.css';
 
@@ -25,11 +25,29 @@ function App() {
   const [saveSuccess, setSaveSuccess] = useState(false);
   const saveTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Add Contact Modal State
-  const [showAddModal, setShowAddModal] = useState(false);
-  const [newContact, setNewContact] = useState<Partial<Contact>>({
+  // Add/Edit Contact Modal State
+  const [showContactModal, setShowContactModal] = useState(false);
+  const [editingContactId, setEditingContactId] = useState<string | null>(null);
+  const [contactFormData, setContactFormData] = useState<Partial<Contact>>({
     category: '', title: '', name: '', contactRoute: ''
   });
+
+  const openAddContactModal = () => {
+    setEditingContactId(null);
+    setContactFormData({ category: '', title: '', name: '', contactRoute: '' });
+    setShowContactModal(true);
+  };
+
+  const openEditContactModal = (contact: Contact) => {
+    setEditingContactId(contact.id);
+    setContactFormData({
+      category: contact.category,
+      title: contact.title,
+      name: contact.name,
+      contactRoute: contact.contactRoute
+    });
+    setShowContactModal(true);
+  };
 
   /**
    * Updates the global data-theme attribute on the root HTML element
@@ -176,38 +194,51 @@ function App() {
   };
 
   /**
-   * Adds a new contact to the database
+   * Saves a new or edited contact to the database
    */
-  const handleAddContact = (e: React.FormEvent) => {
+  const handleSaveContact = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newContact.name || !newContact.category || !newContact.title || !newContact.contactRoute) {
+    if (!contactFormData.name || !contactFormData.category || !contactFormData.title || !contactFormData.contactRoute) {
       alert('Please fill out all fields.');
       return;
     }
     
-    // Sort contacts by ID to find the max ID
-    const maxId = contacts.reduce((max, c) => {
-      const idNum = parseInt(c.id, 10);
-      return !isNaN(idNum) && idNum > max ? idNum : max;
-    }, 0);
-    
-    const contactToAdd: Contact = {
-      id: (maxId + 1).toString(),
-      category: newContact.category as string,
-      title: newContact.title as string,
-      name: newContact.name as string,
-      contactRoute: newContact.contactRoute as string,
-      status: 'Pending'
-    };
-    
     setContacts(prev => {
-      const updated = [...prev, contactToAdd];
+      let updated;
+      if (editingContactId) {
+        // Edit Mode
+        updated = prev.map(c => 
+          c.id === editingContactId ? { 
+            ...c, 
+            category: contactFormData.category as string,
+            title: contactFormData.title as string,
+            name: contactFormData.name as string,
+            contactRoute: contactFormData.contactRoute as string
+          } : c
+        );
+      } else {
+        // Add Mode
+        const maxId = prev.reduce((max, c) => {
+          const idNum = parseInt(c.id, 10);
+          return !isNaN(idNum) && idNum > max ? idNum : max;
+        }, 0);
+        
+        const contactToAdd: Contact = {
+          id: (maxId + 1).toString(),
+          category: contactFormData.category as string,
+          title: contactFormData.title as string,
+          name: contactFormData.name as string,
+          contactRoute: contactFormData.contactRoute as string,
+          status: 'Pending'
+        };
+        updated = [...prev, contactToAdd];
+      }
+      
       queueSaveToGithub(updated);
       return updated;
     });
     
-    setShowAddModal(false);
-    setNewContact({ category: '', title: '', name: '', contactRoute: '' });
+    setShowContactModal(false);
   };
 
   /**
@@ -275,17 +306,17 @@ function App() {
         </div>
       )}
 
-      {showAddModal && (
-        <div className="modal-overlay" onClick={() => setShowAddModal(false)}>
+      {showContactModal && (
+        <div className="modal-overlay" onClick={() => setShowContactModal(false)}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>
-            <h2>Add New Contact</h2>
-            <form onSubmit={handleAddContact}>
+            <h2>{editingContactId ? 'Edit Contact' : 'Add New Contact'}</h2>
+            <form onSubmit={handleSaveContact}>
               <div style={{ marginBottom: '1rem' }}>
                 <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Category</label>
                 <input 
                   type="text" 
-                  value={newContact.category} 
-                  onChange={(e) => setNewContact({...newContact, category: e.target.value})} 
+                  value={contactFormData.category} 
+                  onChange={(e) => setContactFormData({...contactFormData, category: e.target.value})} 
                   placeholder="e.g. Independent Media & Organizations" 
                   className="auth-input"
                   required
@@ -295,8 +326,8 @@ function App() {
                 <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Name</label>
                 <input 
                   type="text" 
-                  value={newContact.name} 
-                  onChange={(e) => setNewContact({...newContact, name: e.target.value})} 
+                  value={contactFormData.name} 
+                  onChange={(e) => setContactFormData({...contactFormData, name: e.target.value})} 
                   placeholder="e.g. Dave Smith" 
                   className="auth-input"
                   required
@@ -306,8 +337,8 @@ function App() {
                 <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Title</label>
                 <input 
                   type="text" 
-                  value={newContact.title} 
-                  onChange={(e) => setNewContact({...newContact, title: e.target.value})} 
+                  value={contactFormData.title} 
+                  onChange={(e) => setContactFormData({...contactFormData, title: e.target.value})} 
                   placeholder="e.g. Host of Part of the Problem podcast" 
                   className="auth-input"
                   required
@@ -317,18 +348,21 @@ function App() {
                 <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Contact Route</label>
                 <input 
                   type="text" 
-                  value={newContact.contactRoute} 
-                  onChange={(e) => setNewContact({...newContact, contactRoute: e.target.value})} 
+                  value={contactFormData.contactRoute} 
+                  onChange={(e) => setContactFormData({...contactFormData, contactRoute: e.target.value})} 
                   placeholder="e.g. Contact Form" 
                   className="auth-input"
                   required
                 />
               </div>
               <div className="modal-actions">
-                <button type="button" onClick={() => setShowAddModal(false)} className="btn-cancel">Cancel</button>
+                <button type="button" onClick={() => setShowContactModal(false)} className="btn-cancel">Cancel</button>
                 <button type="submit" className="btn-save">
-                  <Plus size={16} style={{ marginRight: '0.5rem', display: 'inline-block', verticalAlign: 'middle' }} />
-                  Add Contact
+                  {editingContactId ? (
+                    <><Edit2 size={16} style={{ marginRight: '0.5rem', display: 'inline-block', verticalAlign: 'middle' }} /> Save Changes</>
+                  ) : (
+                    <><Plus size={16} style={{ marginRight: '0.5rem', display: 'inline-block', verticalAlign: 'middle' }} /> Add Contact</>
+                  )}
                 </button>
               </div>
             </form>
@@ -467,7 +501,7 @@ function App() {
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             {githubToken && (
-              <button className="btn-save" onClick={() => setShowAddModal(true)} style={{ padding: '0.4rem 0.8rem', display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.85rem' }}>
+              <button className="btn-save" onClick={openAddContactModal} style={{ padding: '0.4rem 0.8rem', display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.85rem' }}>
                 <Plus size={14} /> Add Contact
               </button>
             )}
@@ -544,6 +578,17 @@ function App() {
                               title="View/Edit Response"
                             >
                               <MessageSquare size={14} /> View
+                            </button>
+                          )}
+
+                          {githubToken && (
+                            <button 
+                              className="icon-btn" 
+                              style={{ padding: '0.25rem 0.5rem', fontSize: '0.75rem', color: 'var(--text-secondary)' }}
+                              onClick={() => openEditContactModal(contact)}
+                              title="Edit Contact"
+                            >
+                              <Edit2 size={12} /> Edit
                             </button>
                           )}
 
