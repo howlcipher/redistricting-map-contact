@@ -4,7 +4,7 @@
     "category": "Government & Elected Officials",
     "title": "Speaker of the House",
     "name": "Mike Johnson",
-    "contactRoute": "Congressional contact page or leadership desk",
+    "contactRoute": "https://mikejohnson.house.gov/contact/",
     "status": "Pending"
   },
   {
@@ -12,7 +12,7 @@
     "category": "Government & Elected Officials",
     "title": "House Majority Leader",
     "name": "Steve Scalise",
-    "contactRoute": "Congressional contact page or majority leader office",
+    "contactRoute": "https://scalise.house.gov/contact",
     "status": "Pending"
   },
   {
@@ -20,7 +20,7 @@
     "category": "Government & Elected Officials",
     "title": "House Minority Leader",
     "name": "Hakeem Jeffries",
-    "contactRoute": "Congressional contact page or Democratic leader desk",
+    "contactRoute": "https://jeffries.house.gov/contact",
     "status": "Pending"
   },
   {
@@ -28,7 +28,7 @@
     "category": "Government & Elected Officials",
     "title": "Senate Minority Leader",
     "name": "Chuck Schumer",
-    "contactRoute": "Senate contact portal or leadership office",
+    "contactRoute": "https://www.schumer.senate.gov/contact/email-chuck",
     "status": "Pending"
   },
   {
@@ -36,7 +36,7 @@
     "category": "Government & Elected Officials",
     "title": "Governor of Michigan",
     "name": "Gretchen Whitmer",
-    "contactRoute": "State of Michigan executive contact portal",
+    "contactRoute": "https://somgovweb.state.mi.us/GovWeb/ContactGov.aspx",
     "status": "Pending"
   },
   {
@@ -44,7 +44,7 @@
     "category": "Government & Elected Officials",
     "title": "Governor of California",
     "name": "Gavin Newsom",
-    "contactRoute": "State of California executive contact form",
+    "contactRoute": "https://www.gov.ca.gov/contact/",
     "status": "Pending"
   },
   {
@@ -52,7 +52,7 @@
     "category": "Government & Elected Officials",
     "title": "Governor of Florida",
     "name": "Ron DeSantis",
-    "contactRoute": "State of Florida executive contact form",
+    "contactRoute": "https://www.flgov.com/contact-governor/",
     "status": "Pending"
   },
   {
@@ -60,7 +60,7 @@
     "category": "Government & Elected Officials",
     "title": "US Senator (MI)",
     "name": "Gary Peters",
-    "contactRoute": "Official Senate web form or regional service portal",
+    "contactRoute": "https://www.peters.senate.gov/contact/email-gary",
     "status": "Pending"
   },
   {
@@ -68,7 +68,7 @@
     "category": "Government & Elected Officials",
     "title": "US Senator (MI)",
     "name": "Elissa Slotkin",
-    "contactRoute": "Official Senate web form or DC scheduling line",
+    "contactRoute": "https://slotkin.house.gov/contact",
     "status": "Pending"
   },
   {
@@ -76,7 +76,7 @@
     "category": "Government & Elected Officials",
     "title": "US Senator (VT)",
     "name": "Bernie Sanders",
-    "contactRoute": "Official Senate web form or campaign media team",
+    "contactRoute": "https://www.sanders.senate.gov/contact/",
     "status": "Pending"
   },
   {
@@ -84,7 +84,7 @@
     "category": "Government & Elected Officials",
     "title": "US Representative (NY)",
     "name": "Alexandria Ocasio Cortez",
-    "contactRoute": "Congressional contact portal or campaign press desk",
+    "contactRoute": "https://ocasio-cortez.house.gov/contact",
     "status": "Pending"
   },
   {
@@ -92,7 +92,7 @@
     "category": "Government & Elected Officials",
     "title": "US Representative (CA)",
     "name": "Ro Khanna",
-    "contactRoute": "Congressional contact portal or district outreach page",
+    "contactRoute": "https://khanna.house.gov/contact",
     "status": "Pending"
   },
   {
@@ -100,7 +100,7 @@
     "category": "Government & Elected Officials",
     "title": "US Representative (MI)",
     "name": "Rashida Tlaib",
-    "contactRoute": "Congressional contact portal or campaign media desk",
+    "contactRoute": "https://tlaib.house.gov/contact",
     "status": "Pending"
   },
   {
@@ -108,7 +108,7 @@
     "category": "Government & Elected Officials",
     "title": "US Representative (MN)",
     "name": "Ilhan Omar",
-    "contactRoute": "Congressional contact portal or press relations team",
+    "contactRoute": "https://omar.house.gov/contact",
     "status": "Pending"
   },
   {
@@ -116,15 +116,15 @@
     "category": "Government & Elected Officials",
     "title": "US Representative (WA)",
     "name": "Pramila Jayapal",
-    "contactRoute": "Congressional contact portal or caucus leadership office",
+    "contactRoute": "https://jayapal.house.gov/contact",
     "status": "Pending"
   },
   {
     "id": "16",
     "category": "Government & Elected Officials",
-    "title": "State Assembly Member (NY)",
+    "title": "Mayor of New York City",
     "name": "Zohran Mamdani",
-    "contactRoute": "New York State Assembly email or district web form",
+    "contactRoute": "https://www.nyc.gov/office-of-the-mayor/contact-the-mayor.page",
     "status": "Pending"
   },
   {
@@ -132,7 +132,7 @@
     "category": "Media & Data Analytics",
     "title": "CNBC Anchor and NYT Columnist",
     "name": "Andrew Ross Sorkin",
-    "contactRoute": "CNBC Squawk Box desk or NYT DealBook editorial email",
+    "contactRoute": "andrew.sorkin@nytimes.com",
     "status": "Pending"
   },
   {
@@ -140,7 +140,7 @@
     "category": "Media & Data Analytics",
     "title": "National Political Correspondent",
     "name": "Steve Kornacki",
-    "contactRoute": "NBC News press room or talent relations team",
+    "contactRoute": "contact.nbcnews@nbcuni.com",
     "status": "Pending"
   },
   {
@@ -148,7 +148,7 @@
     "category": "Media & Data Analytics",
     "title": "Senior Data Reporter",
     "name": "Harry Enten",
-    "contactRoute": "CNN media communications desk or press channel",
+    "contactRoute": "harry.enten@cnn.com",
     "status": "Pending"
   },
   {
@@ -156,7 +156,7 @@
     "category": "Media & Data Analytics",
     "title": "Founder of Silver Bulletin",
     "name": "Nate Silver",
-    "contactRoute": "Substack business portal or media booking address",
+    "contactRoute": "nate@natesilver.net",
     "status": "Pending"
   },
   {
@@ -164,7 +164,7 @@
     "category": "Media & Data Analytics",
     "title": "Senior Editor at Cook Political Report",
     "name": "Dave Wasserman",
-    "contactRoute": "Cook Political Report media line or public desk",
+    "contactRoute": "dave@cookpolitical.com",
     "status": "Pending"
   },
   {
@@ -172,7 +172,7 @@
     "category": "Media & Data Analytics",
     "title": "Analytics Editorial Director",
     "name": "G. Elliott Morris",
-    "contactRoute": "ABC News communications desk or press room",
+    "contactRoute": "g.elliott.morris@abc.com",
     "status": "Pending"
   },
   {
@@ -180,7 +180,7 @@
     "category": "Media & Data Analytics",
     "title": "Fox News Host and Contributor",
     "name": "Jessica Tarlov",
-    "contactRoute": "Fox News media relations or show production team",
+    "contactRoute": "jessica.tarlov@foxnews.com",
     "status": "Pending"
   },
   {
@@ -188,7 +188,7 @@
     "category": "Media & Data Analytics",
     "title": "Fox Business Host",
     "name": "Charles Payne",
-    "contactRoute": "Fox Business PR office or talent communications team",
+    "contactRoute": "charles.payne@foxbusiness.com",
     "status": "Pending"
   },
   {
@@ -196,7 +196,7 @@
     "category": "Independent Media & Organizations",
     "title": "Independent Commentator",
     "name": "Hasan Piker",
-    "contactRoute": "Business and booking email listed on social profiles",
+    "contactRoute": "hasanabi@gmail.com",
     "status": "Pending"
   },
   {
@@ -204,7 +204,7 @@
     "category": "Independent Media & Organizations",
     "title": "Hosts of Breaking Points",
     "name": "Krystal and Saagar",
-    "contactRoute": "Show tips submission page or press inquiry email",
+    "contactRoute": "breakingpoints@gmail.com",
     "status": "Pending"
   },
   {
@@ -212,7 +212,7 @@
     "category": "Independent Media & Organizations",
     "title": "Host of Secular Talk",
     "name": "Kyle Kulinski",
-    "contactRoute": "Secular Talk show email or website contact page",
+    "contactRoute": "seculartalkradio@gmail.com",
     "status": "Pending"
   },
   {
@@ -220,7 +220,7 @@
     "category": "Independent Media & Organizations",
     "title": "Founder of Tucker Carlson Network",
     "name": "Tucker Carlson",
-    "contactRoute": "Network business contact page or booking portal",
+    "contactRoute": "info@tuckercarlson.com",
     "status": "Pending"
   },
   {
@@ -228,7 +228,7 @@
     "category": "Independent Media & Organizations",
     "title": "Host of Last Week Tonight",
     "name": "John Oliver",
-    "contactRoute": "HBO media relations or show production office",
+    "contactRoute": "info@hbo.com",
     "status": "Pending"
   },
   {
@@ -236,7 +236,7 @@
     "category": "Independent Media & Organizations",
     "title": "Progressive Video Channel",
     "name": "More Perfect Union",
-    "contactRoute": "Public business inquiry email on YouTube about page",
+    "contactRoute": "info@perfectunion.us",
     "status": "Pending"
   },
   {
@@ -244,7 +244,7 @@
     "category": "Independent Media & Organizations",
     "title": "Host of The Majority Report",
     "name": "Sam Seder",
-    "contactRoute": "Show tips email or live broadcast text line",
+    "contactRoute": "majorityreporter@gmail.com",
     "status": "Pending"
   },
   {
@@ -252,7 +252,7 @@
     "category": "Independent Media & Organizations",
     "title": "Host of The David Pakman Show",
     "name": "David Pakman",
-    "contactRoute": "Official website contact form or media booking email",
+    "contactRoute": "info@davidpakman.com",
     "status": "Pending"
   },
   {
@@ -260,7 +260,7 @@
     "category": "Independent Media & Organizations",
     "title": "Executive Producer at The Young Turks",
     "name": "Ana Kasparian",
-    "contactRoute": "TYT network press desk or official business channel",
+    "contactRoute": "ana@tyt.com",
     "status": "Pending"
   },
   {
@@ -268,7 +268,7 @@
     "category": "Independent Media & Organizations",
     "title": "Video Commentator and Host",
     "name": "Brian Tyler Cohen",
-    "contactRoute": "Public business inquiry email on YouTube about page",
+    "contactRoute": "briantylercohen@gmail.com",
     "status": "Pending"
   },
   {
@@ -276,7 +276,7 @@
     "category": "Independent Media & Organizations",
     "title": "Investigative Journalist",
     "name": "Ryan Grim",
-    "contactRoute": "Drop Site News tips channel or Substack page",
+    "contactRoute": "ryan@dropsitenews.com",
     "status": "Pending"
   },
   {
@@ -284,7 +284,7 @@
     "category": "Independent Media & Organizations",
     "title": "Democratic National Committee",
     "name": "DNC",
-    "contactRoute": "National headquarters contact form or tech team inquiry portal",
+    "contactRoute": "https://democrats.org/contact-us/",
     "status": "Pending"
   },
   {
@@ -292,7 +292,7 @@
     "category": "Independent Media & Organizations",
     "title": "Republican National Committee",
     "name": "RNC",
-    "contactRoute": "National headquarters contact form or official media office",
+    "contactRoute": "https://gop.com/contact-us/",
     "status": "Pending"
   },
   {
@@ -300,7 +300,7 @@
     "category": "Independent Media & Organizations",
     "title": "Political Organization",
     "name": "DSA Party",
-    "contactRoute": "National organizational email or website contact portal",
+    "contactRoute": "info@dsausa.org",
     "status": "Pending"
   },
   {
@@ -308,7 +308,7 @@
     "category": "Independent Media & Organizations",
     "title": "Political Organization",
     "name": "Our Revolution",
-    "contactRoute": "National organization main email or tech team network",
+    "contactRoute": "info@ourrevolution.com",
     "status": "Pending"
   },
   {
@@ -316,31 +316,31 @@
     "category": "Independent Media & Organizations",
     "title": "Independent Commentator / Journalist",
     "name": "John Stossel",
-    "contactRoute": "Public business inquiry email or social profiles",
+    "contactRoute": "info@johnstossel.com",
     "status": "Pending"
   },
   {
     "id": "41",
     "category": "Independent Media & Organizations",
-    "title": "Writer / Commentator",
+    "title": "Candidate for U.S. Senate (ME)",
     "name": "Graham Platner",
-    "contactRoute": "Substack or public business inquiry email",
+    "contactRoute": "info@leaderswedeserve.com / leaderswedeserve.com",
     "status": "Pending"
   },
   {
     "id": "42",
     "category": "Independent Media & Organizations",
-    "title": "Commentator / Creator",
+    "title": "Candidate for U.S. House (CO-1)",
     "name": "Milat Kiros",
-    "contactRoute": "Public business inquiry email",
+    "contactRoute": "Contact Form: kirosforco.com",
     "status": "Pending"
   },
   {
     "id": "43",
     "category": "Independent Media & Organizations",
-    "title": "Political Commentator & Physician",
+    "title": "Candidate for U.S. Senate (MI)",
     "name": "Abdul El-Sayed",
-    "contactRoute": "Public business inquiry email",
+    "contactRoute": "Contact Form: abdulelsayed.com",
     "status": "Pending"
   },
   {
@@ -348,7 +348,7 @@
     "category": "Independent Media & Organizations",
     "title": "Political Figure / Commentator",
     "name": "Andrew Wang",
-    "contactRoute": "Public business inquiry email",
+    "contactRoute": "info@forwardparty.com",
     "status": "Pending"
   },
   {
@@ -356,7 +356,7 @@
     "category": "Government & Elected Officials",
     "title": "Senate Majority Leader",
     "name": "John Thune",
-    "contactRoute": "Senate contact portal or leadership office",
+    "contactRoute": "https://www.thune.senate.gov/public/index.cfm/contact",
     "status": "Pending"
   },
   {
@@ -364,7 +364,7 @@
     "category": "Government & Elected Officials",
     "title": "Vice President of the United States",
     "name": "JD Vance",
-    "contactRoute": "White House contact form or VP office",
+    "contactRoute": "https://www.whitehouse.gov/contact/",
     "status": "Pending"
   },
   {
@@ -372,7 +372,7 @@
     "category": "Government & Elected Officials",
     "title": "President of the United States",
     "name": "Donald Trump",
-    "contactRoute": "White House contact form or executive office",
+    "contactRoute": "https://www.whitehouse.gov/contact/",
     "status": "Pending"
   }
 ]
