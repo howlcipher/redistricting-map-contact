@@ -5,7 +5,7 @@
     "title": "Candidate for U.S. Senate (MI)",
     "name": "Abdul El-Sayed",
     "contactRoute": "Contact Form: abdulelsayed.com",
-    "status": "Pending"
+    "status": "Replied"
   },
   {
     "id": "41",
@@ -500,8 +500,9 @@
     "title": "Political Party",
     "name": "Reform Party",
     "contactRoute": "info@reformparty.org",
-    "status": "Sent",
-    "id": "48"
+    "status": "Replied",
+    "id": "48",
+    "replyMessage": "David Collison,\n\nThank you!\n\nSent from my iPhone"
   },
   {
     "id": "37",
