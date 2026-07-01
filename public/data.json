@@ -56,6 +56,14 @@
     "status": "Pending"
   },
   {
+    "name": "Cory Booker",
+    "category": "Government & Elected Officials",
+    "contactTitle": "U.S. Senator (NJ)",
+    "contactRoute": "https://www.booker.senate.gov/contact",
+    "status": "Pending",
+    "id": "67"
+  },
+  {
     "id": "47",
     "category": "Government & Elected Officials",
     "title": "President of the United States",
@@ -136,6 +144,14 @@
     "status": "Pending"
   },
   {
+    "name": "John Thune",
+    "category": "Government & Elected Officials",
+    "contactTitle": "U.S. Senator (SD)",
+    "contactRoute": "https://www.thune.senate.gov/public/index.cfm/contact",
+    "status": "Pending",
+    "id": "70"
+  },
+  {
     "id": "65",
     "name": "Jon Ossoff",
     "category": "Government & Elected Officials",
@@ -152,6 +168,14 @@
     "id": "53"
   },
   {
+    "name": "Lisa Murkowski",
+    "category": "Government & Elected Officials",
+    "contactTitle": "U.S. Senator (AK)",
+    "contactRoute": "https://www.murkowski.senate.gov/contact",
+    "status": "Pending",
+    "id": "68"
+  },
+  {
     "id": "1",
     "category": "Government & Elected Officials",
     "title": "Speaker of the House",
@@ -166,6 +190,14 @@
     "name": "Pramila Jayapal",
     "contactRoute": "https://jayapal.house.gov/contact",
     "status": "Pending"
+  },
+  {
+    "name": "Raphael Warnock",
+    "category": "Government & Elected Officials",
+    "contactTitle": "U.S. Senator (GA)",
+    "contactRoute": "https://www.warnock.senate.gov/contact/",
+    "status": "Pending",
+    "id": "66"
   },
   {
     "id": "13",
@@ -198,6 +230,14 @@
     "name": "Steve Scalise",
     "contactRoute": "https://scalise.house.gov/contact",
     "status": "Pending"
+  },
+  {
+    "name": "Susan Collins",
+    "category": "Government & Elected Officials",
+    "contactTitle": "U.S. Senator (ME)",
+    "contactRoute": "https://www.collins.senate.gov/contact",
+    "status": "Pending",
+    "id": "69"
   },
   {
     "category": "Government & Elected Officials",
