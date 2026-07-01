@@ -476,7 +476,7 @@
     "title": "Political Party",
     "name": "Green Party",
     "contactRoute": "office@gp.org",
-    "status": "Drafted",
+    "status": "Sent",
     "id": "50"
   },
   {
@@ -484,7 +484,7 @@
     "title": "Political Party",
     "name": "Libertarian Party",
     "contactRoute": "info@lp.org",
-    "status": "Pending",
+    "status": "Sent",
     "id": "49"
   },
   {
@@ -493,14 +493,14 @@
     "title": "Political Organization",
     "name": "Our Revolution",
     "contactRoute": "info@ourrevolution.com",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "category": "Political Parties",
     "title": "Political Party",
     "name": "Reform Party",
     "contactRoute": "info@reformparty.org",
-    "status": "Pending",
+    "status": "Drafted",
     "id": "48"
   },
   {
