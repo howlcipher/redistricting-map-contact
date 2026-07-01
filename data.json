@@ -244,7 +244,7 @@
     "title": "Democracy Org",
     "name": "Common Cause",
     "contactRoute": "causehq@commoncause.org",
-    "status": "Sent",
+    "status": "Unresponsive",
     "id": "61"
   },
   {
@@ -332,7 +332,7 @@
     "title": "Redistricting Org",
     "name": "National Republican Redistricting Trust",
     "contactRoute": "info@thenrrt.com",
-    "status": "Sent",
+    "status": "Replied",
     "id": "64"
   },
   {
@@ -397,14 +397,14 @@
     "title": "Senior Editor at Cook Political Report",
     "name": "Dave Wasserman",
     "contactRoute": "dave@cookpolitical.com",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "category": "Media & Data Analytics",
     "title": "NYT Columnist / Podcaster",
     "name": "Ezra Klein",
     "contactRoute": "ezra.klein@nytimes.com",
-    "status": "Pending",
+    "status": "Sent",
     "id": "57"
   },
   {
@@ -413,7 +413,7 @@
     "title": "Analytics Editorial Director",
     "name": "G. Elliott Morris",
     "contactRoute": "g.elliott.morris@abc.com",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "id": "19",
@@ -421,7 +421,7 @@
     "title": "Senior Data Reporter",
     "name": "Harry Enten",
     "contactRoute": "harry.enten@cnn.com",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "id": "23",
@@ -429,7 +429,7 @@
     "title": "Fox News Host and Contributor",
     "name": "Jessica Tarlov",
     "contactRoute": "jessica.tarlov@foxnews.com",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "id": "20",
@@ -437,14 +437,14 @@
     "title": "Founder of Silver Bulletin",
     "name": "Nate Silver",
     "contactRoute": "nate@natesilver.net",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "category": "Media & Data Analytics",
     "title": "MSNBC Host",
     "name": "Rachel Maddow",
     "contactRoute": "rachel@msnbc.com",
-    "status": "Pending",
+    "status": "Sent",
     "id": "56"
   },
   {
@@ -453,7 +453,7 @@
     "title": "National Political Correspondent",
     "name": "Steve Kornacki",
     "contactRoute": "contact.nbcnews@nbcuni.com",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "id": "36",
@@ -469,14 +469,14 @@
     "title": "Political Organization",
     "name": "DSA Party",
     "contactRoute": "info@dsausa.org",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "category": "Political Parties",
     "title": "Political Party",
     "name": "Green Party",
     "contactRoute": "office@gp.org",
-    "status": "Pending",
+    "status": "Sent",
     "id": "50"
   },
   {
@@ -484,7 +484,7 @@
     "title": "Political Party",
     "name": "Libertarian Party",
     "contactRoute": "info@lp.org",
-    "status": "Pending",
+    "status": "Sent",
     "id": "49"
   },
   {
@@ -493,14 +493,14 @@
     "title": "Political Organization",
     "name": "Our Revolution",
     "contactRoute": "info@ourrevolution.com",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "category": "Political Parties",
     "title": "Political Party",
     "name": "Reform Party",
     "contactRoute": "info@reformparty.org",
-    "status": "Pending",
+    "status": "Sent",
     "id": "48"
   },
   {
@@ -509,14 +509,6 @@
     "title": "Republican National Committee",
     "name": "RNC",
     "contactRoute": "https://gop.com/contact-us/",
-    "status": "Pending"
-  },
-  {
-    "id": "65",
-    "category": "Independent Media & Organizations",
-    "title": "Comedian & Podcaster",
-    "name": "Dave Smith",
-    "contactRoute": "https://comicdavesmith.com/contact",
     "status": "Pending"
   }
 ]
