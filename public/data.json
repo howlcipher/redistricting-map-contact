@@ -397,7 +397,7 @@
     "title": "Senior Editor at Cook Political Report",
     "name": "Dave Wasserman",
     "contactRoute": "dave@cookpolitical.com",
-    "status": "Pending"
+    "status": "Drafted"
   },
   {
     "category": "Media & Data Analytics",
@@ -509,14 +509,6 @@
     "title": "Republican National Committee",
     "name": "RNC",
     "contactRoute": "https://gop.com/contact-us/",
-    "status": "Pending"
-  },
-  {
-    "id": "65",
-    "category": "Independent Media & Organizations",
-    "title": "Comedian & Podcaster",
-    "name": "Dave Smith",
-    "contactRoute": "https://comicdavesmith.com/contact",
     "status": "Pending"
   }
 ]
