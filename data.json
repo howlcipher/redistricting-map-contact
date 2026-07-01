@@ -5,7 +5,7 @@
     "title": "Candidate for U.S. Senate (MI)",
     "name": "Abdul El-Sayed",
     "contactRoute": "Contact Form: abdulelsayed.com",
-    "status": "Undeliverable"
+    "status": "Pending"
   },
   {
     "id": "41",
@@ -510,6 +510,14 @@
     "title": "Republican National Committee",
     "name": "RNC",
     "contactRoute": "https://gop.com/contact-us/",
+    "status": "Pending"
+  },
+  {
+    "id": "65",
+    "category": "Independent Media & Organizations",
+    "title": "Host of Part of the Problem podcast",
+    "name": "Dave Smith",
+    "contactRoute": "https://comicdavesmith.com/contact",
     "status": "Pending"
   }
 ]
