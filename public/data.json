@@ -397,14 +397,14 @@
     "title": "Senior Editor at Cook Political Report",
     "name": "Dave Wasserman",
     "contactRoute": "dave@cookpolitical.com",
-    "status": "Drafted"
+    "status": "Sent"
   },
   {
     "category": "Media & Data Analytics",
     "title": "NYT Columnist / Podcaster",
     "name": "Ezra Klein",
     "contactRoute": "ezra.klein@nytimes.com",
-    "status": "Pending",
+    "status": "Sent",
     "id": "57"
   },
   {
@@ -413,7 +413,7 @@
     "title": "Analytics Editorial Director",
     "name": "G. Elliott Morris",
     "contactRoute": "g.elliott.morris@abc.com",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "id": "19",
@@ -421,7 +421,7 @@
     "title": "Senior Data Reporter",
     "name": "Harry Enten",
     "contactRoute": "harry.enten@cnn.com",
-    "status": "Pending"
+    "status": "Drafted"
   },
   {
     "id": "23",
