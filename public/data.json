@@ -269,7 +269,7 @@
     "title": "Independent Commentator",
     "name": "Hasan Piker",
     "contactRoute": "hasanabi@gmail.com",
-    "status": "Drafted"
+    "status": "Sent"
   },
   {
     "id": "29",
@@ -277,7 +277,7 @@
     "title": "Host of Last Week Tonight",
     "name": "John Oliver",
     "contactRoute": "info@hbo.com",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "id": "40",
@@ -285,7 +285,7 @@
     "title": "Independent Commentator / Journalist",
     "name": "John Stossel",
     "contactRoute": "info@johnstossel.com",
-    "status": "Pending"
+    "status": "Drafted"
   },
   {
     "id": "26",
