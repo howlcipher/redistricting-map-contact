@@ -244,7 +244,7 @@
     "title": "Democracy Org",
     "name": "Common Cause",
     "contactRoute": "causehq@commoncause.org",
-    "status": "Sent",
+    "status": "Unresponsive",
     "id": "61"
   },
   {
@@ -332,7 +332,7 @@
     "title": "Redistricting Org",
     "name": "National Republican Redistricting Trust",
     "contactRoute": "info@thenrrt.com",
-    "status": "Sent",
+    "status": "Replied",
     "id": "64"
   },
   {
@@ -500,7 +500,7 @@
     "title": "Political Party",
     "name": "Reform Party",
     "contactRoute": "info@reformparty.org",
-    "status": "Drafted",
+    "status": "Sent",
     "id": "48"
   },
   {
