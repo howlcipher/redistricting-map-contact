@@ -510,5 +510,13 @@
     "name": "RNC",
     "contactRoute": "https://gop.com/contact-us/",
     "status": "Pending"
+  },
+  {
+    "id": "65",
+    "category": "Independent Media & Organizations",
+    "title": "Comedian & Podcaster",
+    "name": "Dave Smith",
+    "contactRoute": "https://comicdavesmith.com/contact",
+    "status": "Pending"
   }
 ]
