@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Search, Mail, Building, Users, Activity, Sun, Moon, Code, Lock, Unlock, Loader2, Landmark, Megaphone } from 'lucide-react';
+import { Search, Mail, Building, Users, Activity, Sun, Moon, Code, Lock, Unlock, Loader2, Landmark, Megaphone, MessageSquare, X } from 'lucide-react';
 import type { Contact, ContactStatus } from './data';
 import './index.css';
 
@@ -17,6 +17,10 @@ function App() {
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [githubToken, setGithubToken] = useState(localStorage.getItem('gh_token') || '');
   const [isSaving, setIsSaving] = useState(false);
+  
+  // Message Modal State
+  const [selectedMessageContact, setSelectedMessageContact] = useState<Contact | null>(null);
+  const [editingMessage, setEditingMessage] = useState<string | null>(null);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -120,6 +124,22 @@ function App() {
     updateStatusOnGithub(updatedContacts);
   };
 
+  const saveMessage = () => {
+    if (!githubToken || !selectedMessageContact) return;
+    
+    const updatedContacts = contacts.map(c => {
+      if (c.id === selectedMessageContact.id) {
+        return { ...c, replyMessage: editingMessage || '' };
+      }
+      return c;
+    });
+    
+    setContacts(updatedContacts);
+    updateStatusOnGithub(updatedContacts);
+    setSelectedMessageContact(null);
+    setEditingMessage(null);
+  };
+
   const filteredContacts = useMemo(() => {
     if (!Array.isArray(contacts)) return [];
     return contacts.filter(c => 
@@ -172,6 +192,48 @@ function App() {
                 <button type="submit" className="btn-save">Save Token</button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {selectedMessageContact && (
+        <div className="modal-overlay" onClick={() => setSelectedMessageContact(null)}>
+          <div className="modal-content" onClick={e => e.stopPropagation()} style={{ position: 'relative', maxWidth: '600px' }}>
+            <button 
+              onClick={() => setSelectedMessageContact(null)} 
+              style={{ position: 'absolute', top: '1rem', right: '1rem', background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--text-secondary)' }}
+            >
+              <X size={24} />
+            </button>
+            <h2>Response from {selectedMessageContact.name}</h2>
+            <p>{selectedMessageContact.title}</p>
+            
+            {githubToken ? (
+              <div style={{ marginTop: '1.5rem' }}>
+                <textarea 
+                  value={editingMessage || ''} 
+                  onChange={(e) => setEditingMessage(e.target.value)} 
+                  placeholder="Paste their response here..." 
+                  className="auth-input"
+                  style={{ minHeight: '150px', fontFamily: 'var(--font-sans)', resize: 'vertical' }}
+                />
+                <div className="modal-actions">
+                  <button onClick={() => setSelectedMessageContact(null)} className="btn-cancel">Cancel</button>
+                  <button onClick={saveMessage} className="btn-save">
+                    {isSaving ? <Loader2 size={16} className="spin" style={{marginRight: '0.5rem', display: 'inline-block', verticalAlign: 'middle'}}/> : null}
+                    Save Message
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div style={{ marginTop: '1.5rem', background: 'var(--input-bg)', border: '2px solid var(--card-border)', padding: '1rem', borderRadius: '2px', whiteSpace: 'pre-wrap', maxHeight: '400px', overflowY: 'auto' }}>
+                {selectedMessageContact.replyMessage || (
+                  <span style={{ color: 'var(--text-secondary)', fontStyle: 'italic' }}>
+                    No public response message has been attached yet.
+                  </span>
+                )}
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -288,15 +350,31 @@ function App() {
                         </div>
                       </td>
                       <td>
-                        <button 
-                          className={`status-badge status-${contact.status}`}
-                          onClick={() => handleStatusChange(contact.id)}
-                          style={{ cursor: githubToken ? 'pointer' : 'default' }}
-                          title={githubToken ? 'Click to change status' : 'Login to change status'}
-                        >
-                          {contact.status === 'Pending' && <div style={{width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'currentColor'}}></div>}
-                          {contact.status}
-                        </button>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+                          <button 
+                            className={`status-badge status-${contact.status}`}
+                            onClick={() => handleStatusChange(contact.id)}
+                            style={{ cursor: githubToken ? 'pointer' : 'default' }}
+                            title={githubToken ? 'Click to change status' : 'Login to change status'}
+                          >
+                            {contact.status === 'Pending' && <div style={{width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'currentColor'}}></div>}
+                            {contact.status}
+                          </button>
+                          
+                          {contact.status === 'Replied' && (
+                            <button 
+                              className="icon-btn" 
+                              style={{ padding: '0.25rem 0.5rem', fontSize: '0.75rem' }}
+                              onClick={() => {
+                                setSelectedMessageContact(contact);
+                                setEditingMessage(contact.replyMessage || '');
+                              }}
+                              title="View/Edit Response"
+                            >
+                              <MessageSquare size={14} /> View
+                            </button>
+                          )}
+                        </div>
                       </td>
                     </tr>
                   ))}

@@ -8,4 +8,5 @@ export interface Contact {
   contactRoute: string;
   status: ContactStatus;
   notes?: string;
+  replyMessage?: string;
 }
