@@ -444,7 +444,7 @@
     "title": "MSNBC Host",
     "name": "Rachel Maddow",
     "contactRoute": "rachel@msnbc.com",
-    "status": "Drafted",
+    "status": "Sent",
     "id": "56"
   },
   {
@@ -453,7 +453,7 @@
     "title": "National Political Correspondent",
     "name": "Steve Kornacki",
     "contactRoute": "contact.nbcnews@nbcuni.com",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "id": "36",
@@ -469,14 +469,14 @@
     "title": "Political Organization",
     "name": "DSA Party",
     "contactRoute": "info@dsausa.org",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "category": "Political Parties",
     "title": "Political Party",
     "name": "Green Party",
     "contactRoute": "office@gp.org",
-    "status": "Pending",
+    "status": "Drafted",
     "id": "50"
   },
   {
