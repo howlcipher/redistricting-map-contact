@@ -19,7 +19,7 @@ By removing human bias from the equation, we can ensure every vote counts equall
 
 I would be happy to discuss the methodology, the open-source code, or how you can leverage this data. 
 
-Best regards,
+Best wishes, warmest regards,
 
 [Your Name]  
 **Project RedrawUS**  
