@@ -55,4 +55,12 @@ export const contactData: Contact[] = [
   { id: '37', category: 'Independent Media & Organizations', title: 'Republican National Committee', name: 'RNC', contactRoute: 'National headquarters contact form or official media office', status: 'Pending' },
   { id: '38', category: 'Independent Media & Organizations', title: 'Political Organization', name: 'DSA Party', contactRoute: 'National organizational email or website contact portal', status: 'Pending' },
   { id: '39', category: 'Independent Media & Organizations', title: 'Political Organization', name: 'Our Revolution', contactRoute: 'National organization main email or tech team network', status: 'Pending' },
+  { id: '40', category: 'Independent Media & Organizations', title: 'Independent Commentator / Journalist', name: 'John Stossel', contactRoute: 'Public business inquiry email or social profiles', status: 'Pending' },
+  { id: '41', category: 'Independent Media & Organizations', title: 'Writer / Commentator', name: 'Graham Platner', contactRoute: 'Substack or public business inquiry email', status: 'Pending' },
+  { id: '42', category: 'Independent Media & Organizations', title: 'Commentator / Creator', name: 'Milat Kiros', contactRoute: 'Public business inquiry email', status: 'Pending' },
+  { id: '43', category: 'Independent Media & Organizations', title: 'Political Commentator & Physician', name: 'Abdul El-Sayed', contactRoute: 'Public business inquiry email', status: 'Pending' },
+  { id: '44', category: 'Independent Media & Organizations', title: 'Political Figure / Commentator', name: 'Andrew Wang', contactRoute: 'Public business inquiry email', status: 'Pending' },
+  { id: '45', category: 'Government & Elected Officials', title: 'Senate Majority Leader', name: 'John Thune', contactRoute: 'Senate contact portal or leadership office', status: 'Pending' },
+  { id: '46', category: 'Government & Elected Officials', title: 'Vice President of the United States', name: 'JD Vance', contactRoute: 'White House contact form or VP office', status: 'Pending' },
+  { id: '47', category: 'Government & Elected Officials', title: 'President of the United States', name: 'Donald Trump', contactRoute: 'White House contact form or executive office', status: 'Pending' },
 ];
