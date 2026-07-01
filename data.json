@@ -8,14 +8,6 @@
     "status": "Pending"
   },
   {
-    "name": "Beto O'Rourke",
-    "category": "Candidates for Office",
-    "contactTitle": "Political Advocate / Candidate (TX)",
-    "contactRoute": "https://poweredxpeople.org/contact/",
-    "status": "Pending",
-    "id": "72"
-  },
-  {
     "id": "41",
     "category": "Candidates for Office",
     "title": "Candidate for U.S. Senate (ME)",
@@ -24,28 +16,12 @@
     "status": "Pending"
   },
   {
-    "name": "Katie Porter",
-    "category": "Candidates for Office",
-    "contactTitle": "Consumer Advocate / Candidate (CA)",
-    "contactRoute": "https://katieporter.com/contact/",
-    "status": "Pending",
-    "id": "73"
-  },
-  {
     "id": "42",
     "category": "Candidates for Office",
     "title": "Candidate for U.S. House (CO-1)",
     "name": "Milat Kiros",
     "contactRoute": "Contact Form: kirosforco.com",
     "status": "Pending"
-  },
-  {
-    "name": "Stacey Abrams",
-    "category": "Candidates for Office",
-    "contactTitle": "Voting Rights Advocate / Candidate (GA)",
-    "contactRoute": "https://fairfight.com/contact/",
-    "status": "Pending",
-    "id": "71"
   },
   {
     "id": "11",
@@ -78,14 +54,6 @@
     "name": "Chuck Schumer",
     "contactRoute": "https://www.schumer.senate.gov/contact/email-chuck",
     "status": "Pending"
-  },
-  {
-    "name": "Cory Booker",
-    "category": "Government & Elected Officials",
-    "contactTitle": "U.S. Senator (NJ)",
-    "contactRoute": "https://www.booker.senate.gov/contact",
-    "status": "Pending",
-    "id": "67"
   },
   {
     "id": "47",
@@ -168,44 +136,12 @@
     "status": "Pending"
   },
   {
-    "name": "John Thune",
-    "category": "Government & Elected Officials",
-    "contactTitle": "U.S. Senator (SD)",
-    "contactRoute": "https://www.thune.senate.gov/public/index.cfm/contact",
-    "status": "Pending",
-    "id": "70"
-  },
-  {
-    "id": "65",
-    "name": "Jon Ossoff",
-    "category": "Government & Elected Officials",
-    "contactTitle": "U.S. Senator (GA)",
-    "contactRoute": "https://www.ossoff.senate.gov/contact-us/",
-    "status": "Pending"
-  },
-  {
     "category": "Government & Elected Officials",
     "title": "Governor of Pennsylvania",
     "name": "Josh Shapiro",
     "contactRoute": "https://www.governor.pa.gov/contact/",
     "status": "Pending",
     "id": "53"
-  },
-  {
-    "name": "Lindsey Graham",
-    "category": "Government & Elected Officials",
-    "contactTitle": "U.S. Senator (SC)",
-    "contactRoute": "https://www.lgraham.senate.gov/public/index.cfm/contact-form",
-    "status": "Pending",
-    "id": "74"
-  },
-  {
-    "name": "Lisa Murkowski",
-    "category": "Government & Elected Officials",
-    "contactTitle": "U.S. Senator (AK)",
-    "contactRoute": "https://www.murkowski.senate.gov/contact",
-    "status": "Pending",
-    "id": "68"
   },
   {
     "id": "1",
@@ -222,22 +158,6 @@
     "name": "Pramila Jayapal",
     "contactRoute": "https://jayapal.house.gov/contact",
     "status": "Pending"
-  },
-  {
-    "name": "Rand Paul",
-    "category": "Government & Elected Officials",
-    "contactTitle": "U.S. Senator (KY)",
-    "contactRoute": "https://www.paul.senate.gov/connect/contact-the-office/",
-    "status": "Pending",
-    "id": "76"
-  },
-  {
-    "name": "Raphael Warnock",
-    "category": "Government & Elected Officials",
-    "contactTitle": "U.S. Senator (GA)",
-    "contactRoute": "https://www.warnock.senate.gov/contact/",
-    "status": "Pending",
-    "id": "66"
   },
   {
     "id": "13",
@@ -270,22 +190,6 @@
     "name": "Steve Scalise",
     "contactRoute": "https://scalise.house.gov/contact",
     "status": "Pending"
-  },
-  {
-    "name": "Susan Collins",
-    "category": "Government & Elected Officials",
-    "contactTitle": "U.S. Senator (ME)",
-    "contactRoute": "https://www.collins.senate.gov/contact",
-    "status": "Pending",
-    "id": "69"
-  },
-  {
-    "name": "Ted Cruz",
-    "category": "Government & Elected Officials",
-    "contactTitle": "U.S. Senator (TX)",
-    "contactRoute": "https://www.cruz.senate.gov/contact",
-    "status": "Pending",
-    "id": "75"
   },
   {
     "category": "Government & Elected Officials",
@@ -356,7 +260,7 @@
     "title": "Electoral Reform Org",
     "name": "FairVote",
     "contactRoute": "info@fairvote.org",
-    "status": "Pending",
+    "status": "Sent",
     "id": "58"
   },
   {
