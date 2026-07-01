@@ -25,6 +25,6 @@ I would be happy to discuss the methodology, the open-source code, or how you ca
 
 Best wishes, warmest regards,
 
-[Your Name]  
+William Elias  
 **Project RedrawUS**  
 ProjectRedrawUS@gmail.com  
