@@ -293,7 +293,7 @@
     "title": "Hosts of Breaking Points",
     "name": "Krystal and Saagar",
     "contactRoute": "breakingpoints@gmail.com",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "id": "27",
@@ -301,14 +301,14 @@
     "title": "Host of Secular Talk",
     "name": "Kyle Kulinski",
     "contactRoute": "seculartalkradio@gmail.com",
-    "status": "Pending"
+    "status": "Sent"
   },
   {
     "category": "Independent Media & Organizations",
     "title": "Voting Rights Org",
     "name": "League of Women Voters",
     "contactRoute": "info@lwv.org",
-    "status": "Pending",
+    "status": "Sent",
     "id": "60"
   },
   {
@@ -317,7 +317,7 @@
     "title": "Progressive Video Channel",
     "name": "More Perfect Union",
     "contactRoute": "info@perfectunion.us",
-    "status": "Pending"
+    "status": "Drafted"
   },
   {
     "category": "Independent Media & Organizations",
