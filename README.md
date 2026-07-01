@@ -1,7 +1,8 @@
 # Redistricting Map Contact Dashboard
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/howlcipher/redistricting-map-contact/deploy.yml?branch=main&style=for-the-badge)
-![License](https://img.shields.io/github/license/howlcipher/redistricting-map-contact?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Live-success?style=for-the-badge&color=0A3161)
+![License](https://img.shields.io/github/license/howlcipher/redistricting-map-contact?style=for-the-badge&color=B31942)
+![Last Commit](https://img.shields.io/github/last-commit/howlcipher/redistricting-map-contact?style=for-the-badge&color=0A3161)
 
 A premium dashboard built to track outreach to government officials, media, and political organizations regarding the algorithm-based state voting districts project.
 
