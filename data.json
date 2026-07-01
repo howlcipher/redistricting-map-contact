@@ -136,6 +136,14 @@
     "status": "Pending"
   },
   {
+    "id": "65",
+    "name": "Jon Ossoff",
+    "category": "Government & Elected Officials",
+    "contactTitle": "U.S. Senator (GA)",
+    "contactRoute": "https://www.ossoff.senate.gov/contact-us/",
+    "status": "Pending"
+  },
+  {
     "category": "Government & Elected Officials",
     "title": "Governor of Pennsylvania",
     "name": "Josh Shapiro",
