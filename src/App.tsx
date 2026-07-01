@@ -1,11 +1,16 @@
-import React, { useState, useMemo } from 'react';
-import { Search, Mail, Building, Users, Activity } from 'lucide-react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { Search, Mail, Building, Users, Activity, Sun, Moon } from 'lucide-react';
 import { contactData } from './data';
 import type { Contact, ContactStatus } from './data';
 import './index.css';
 
 function App() {
   const [contacts, setContacts] = useState<Contact[]>(contactData);
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleStatusChange = (id: string) => {
@@ -52,6 +57,14 @@ function App() {
   return (
     <div className="dashboard-container">
       <header className="header">
+        <button 
+          className="theme-toggle" 
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          aria-label="Toggle theme"
+          title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+        >
+          {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+        </button>
         <h1>Redistricting Outreach Dashboard</h1>
         <p>Tracking communication for the algorithm-based state voting districts project.</p>
       </header>

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
+  /* Dark Mode (Default) */
   --bg-color: #0f172a;
   --bg-gradient: radial-gradient(circle at top left, #1e293b, #0f172a);
   --card-bg: rgba(30, 41, 59, 0.7);
@@ -8,12 +9,42 @@
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --accent-color: #3b82f6;
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-focus-bg: rgba(255, 255, 255, 0.1);
+  --th-bg: rgba(0, 0, 0, 0.2);
+  --tr-hover: rgba(255, 255, 255, 0.05);
+  --controls-bg: rgba(0, 0, 0, 0.15);
+  --category-row-bg: rgba(0, 0, 0, 0.3);
+  --badge-shadow: rgba(0, 0, 0, 0.15);
   
   --status-pending: #fbbf24;
   --status-drafted: #60a5fa;
   --status-sent: #c084fc;
   --status-replied: #34d399;
   --status-unresponsive: #f87171;
+}
+
+[data-theme="light"] {
+  --bg-color: #f8fafc;
+  --bg-gradient: radial-gradient(circle at top left, #ffffff, #f1f5f9);
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --card-border: rgba(0, 0, 0, 0.1);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-color: #2563eb;
+  --input-bg: rgba(0, 0, 0, 0.03);
+  --input-focus-bg: rgba(0, 0, 0, 0.06);
+  --th-bg: rgba(0, 0, 0, 0.04);
+  --tr-hover: rgba(0, 0, 0, 0.02);
+  --controls-bg: rgba(255, 255, 255, 0.5);
+  --category-row-bg: rgba(0, 0, 0, 0.03);
+  --badge-shadow: rgba(0, 0, 0, 0.05);
+  
+  --status-pending: #b45309;
+  --status-drafted: #1d4ed8;
+  --status-sent: #7e22ce;
+  --status-replied: #047857;
+  --status-unresponsive: #b91c1c;
 }
 
 * {
@@ -29,6 +60,7 @@ body {
   color: var(--text-primary);
   min-height: 100vh;
   line-height: 1.5;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .dashboard-container {
@@ -40,6 +72,27 @@ body {
 .header {
   margin-bottom: 3rem;
   text-align: center;
+  position: relative;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
 }
 
 .header h1 {
@@ -49,6 +102,12 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.5rem;
+}
+
+[data-theme="light"] .header h1 {
+  background: linear-gradient(135deg, #0284c7, #4f46e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .header p {
@@ -75,8 +134,8 @@ body {
 
 .stat-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 30px var(--badge-shadow);
+  border-color: var(--accent-color);
 }
 
 .stat-value {
@@ -98,7 +157,7 @@ body {
   backdrop-filter: blur(10px);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px var(--badge-shadow);
 }
 
 .controls {
@@ -107,7 +166,7 @@ body {
   padding: 1.25rem 1.5rem;
   border-bottom: 1px solid var(--card-border);
   align-items: center;
-  background: rgba(0, 0, 0, 0.15);
+  background: var(--controls-bg);
 }
 
 .search-wrapper {
@@ -126,7 +185,7 @@ body {
 }
 
 .search-input {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--input-bg);
   border: 1px solid var(--card-border);
   color: var(--text-primary);
   padding: 0.75rem 1rem 0.75rem 2.75rem;
@@ -139,8 +198,8 @@ body {
 
 .search-input:focus {
   outline: none;
-  border-color: #818cf8;
-  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-color);
+  background: var(--input-focus-bg);
   box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.2);
 }
 
@@ -159,7 +218,7 @@ body {
 }
 
 .data-table th {
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--th-bg);
   color: var(--text-secondary);
   font-weight: 600;
   font-size: 0.75rem;
@@ -168,12 +227,12 @@ body {
 }
 
 .data-table tr {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--card-border);
   transition: background-color 0.2s ease;
 }
 
 .data-table tr:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: var(--tr-hover);
 }
 
 .data-table tr:last-child {
@@ -215,7 +274,7 @@ body {
 
 .status-badge:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 10px var(--badge-shadow);
 }
 
 .status-badge:active {
@@ -249,12 +308,12 @@ body {
 }
 
 .category-row {
-  background: rgba(0, 0, 0, 0.3) !important;
+  background: var(--category-row-bg) !important;
 }
 
 .category-row td {
   padding: 0.75rem 1.5rem;
-  color: #818cf8;
+  color: var(--accent-color);
   font-weight: 600;
   font-size: 0.85rem;
   text-transform: uppercase;
