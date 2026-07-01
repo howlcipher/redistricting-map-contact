@@ -253,14 +253,14 @@
     "title": "Host of The David Pakman Show",
     "name": "David Pakman",
     "contactRoute": "info@davidpakman.com",
-    "status": "Drafted"
+    "status": "Sent"
   },
   {
     "category": "Independent Media & Organizations",
     "title": "Electoral Reform Org",
     "name": "FairVote",
     "contactRoute": "info@fairvote.org",
-    "status": "Pending",
+    "status": "Sent",
     "id": "58"
   },
   {
@@ -269,7 +269,7 @@
     "title": "Independent Commentator",
     "name": "Hasan Piker",
     "contactRoute": "hasanabi@gmail.com",
-    "status": "Pending"
+    "status": "Drafted"
   },
   {
     "id": "29",
