@@ -317,14 +317,14 @@
     "title": "Progressive Video Channel",
     "name": "More Perfect Union",
     "contactRoute": "info@perfectunion.us",
-    "status": "Drafted"
+    "status": "Sent"
   },
   {
     "category": "Independent Media & Organizations",
     "title": "Redistricting Org",
     "name": "National Democratic Redistricting Committee",
     "contactRoute": "info@democraticredistricting.com",
-    "status": "Pending",
+    "status": "Sent",
     "id": "63"
   },
   {
@@ -332,7 +332,7 @@
     "title": "Redistricting Org",
     "name": "National Republican Redistricting Trust",
     "contactRoute": "info@thenrrt.com",
-    "status": "Pending",
+    "status": "Drafted",
     "id": "64"
   },
   {
