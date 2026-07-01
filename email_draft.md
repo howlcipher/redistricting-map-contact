@@ -11,7 +11,7 @@ The fully transparent, open-source codebase and methodology are available here: 
 
 **I am sending this exact toolset simultaneously to leadership across the political spectrum—including the DNC, RNC, third parties, state governors, major media outlets, independent journalists, and voting rights organizations.** 
 
-To maintain total transparency in this rollout, you can view the live public outreach dashboard here to track exactly who has been contacted and who has responded to this project among your peers and competitors: **[https://howlcipher.github.io/redistricting-map-contact/](https://howlcipher.github.io/redistricting-map-contact/)**
+To maintain total transparency in this rollout, you can view the live public outreach dashboard here to track exactly who has been contacted among your peers and competitors. **Furthermore, any formal response you provide to this email will be publicly attached to your name on this dashboard for voters and the press to read:** **[https://howlcipher.github.io/redistricting-map-contact/](https://howlcipher.github.io/redistricting-map-contact/)**
 
 From a game-theory perspective, the public availability of this tool fundamentally changes the landscape of redistricting. Because the algorithm is transparent and the metrics (like the Efficiency Gap) are mathematically irrefutable, it is now trivially easy for anyone to prove when a map has been artificially skewed. 
 

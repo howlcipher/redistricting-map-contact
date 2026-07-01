@@ -22,6 +22,7 @@ A premium dashboard built to track outreach to government officials, media, and 
 ## Features
 - **Minimalist Retro Patriotic UI**: A beautifully clean interface with Old Glory accents and typewriter typography.
 - **GitHub as a Database**: Edit your contact statuses live on the site by securely connecting with a GitHub Personal Access Token.
+- **Public Response Tracking**: Attach and display public statements directly to any contact marked as "Replied" using a clean modal overlay.
 - **Live Categorization**: Contacts are grouped logically and sorted alphabetically.
 - **Micro-Animations**: Vintage-inspired blocky shadows and button translations for a premium feel.
 
