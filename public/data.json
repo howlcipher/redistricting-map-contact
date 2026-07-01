@@ -192,6 +192,14 @@
     "id": "53"
   },
   {
+    "name": "Lindsey Graham",
+    "category": "Government & Elected Officials",
+    "contactTitle": "U.S. Senator (SC)",
+    "contactRoute": "https://www.lgraham.senate.gov/public/index.cfm/contact-form",
+    "status": "Pending",
+    "id": "74"
+  },
+  {
     "name": "Lisa Murkowski",
     "category": "Government & Elected Officials",
     "contactTitle": "U.S. Senator (AK)",
@@ -214,6 +222,14 @@
     "name": "Pramila Jayapal",
     "contactRoute": "https://jayapal.house.gov/contact",
     "status": "Pending"
+  },
+  {
+    "name": "Rand Paul",
+    "category": "Government & Elected Officials",
+    "contactTitle": "U.S. Senator (KY)",
+    "contactRoute": "https://www.paul.senate.gov/connect/contact-the-office/",
+    "status": "Pending",
+    "id": "76"
   },
   {
     "name": "Raphael Warnock",
@@ -262,6 +278,14 @@
     "contactRoute": "https://www.collins.senate.gov/contact",
     "status": "Pending",
     "id": "69"
+  },
+  {
+    "name": "Ted Cruz",
+    "category": "Government & Elected Officials",
+    "contactTitle": "U.S. Senator (TX)",
+    "contactRoute": "https://www.cruz.senate.gov/contact",
+    "status": "Pending",
+    "id": "75"
   },
   {
     "category": "Government & Elected Officials",
