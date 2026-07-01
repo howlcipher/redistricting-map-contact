@@ -89,8 +89,9 @@ function App() {
     if (!githubToken) return;
     setIsSaving(true);
     try {
-      // 1. Get current SHA
-      const res = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
+      // 1. Get current SHA with cache-busting to prevent stale SHA 409 conflicts
+      const timestamp = new Date().getTime();
+      const res = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}?ref=main&t=${timestamp}`, {
         headers: { Authorization: `token ${githubToken}` }
       });
       const fileData = await res.json();
@@ -121,7 +122,7 @@ function App() {
       setTimeout(() => setSaveSuccess(false), 3000);
     } catch (err) {
       console.error('Failed to save to GitHub:', err);
-      alert('Failed to save changes. Check your token permissions.');
+      alert('Failed to save changes to GitHub. Please refresh the page and try again (Check your token permissions if this persists).');
     } finally {
       setIsSaving(false);
     }
