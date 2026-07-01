@@ -1,0 +1,378 @@
+[
+  {
+    "id": "1",
+    "category": "Government & Elected Officials",
+    "title": "Speaker of the House",
+    "name": "Mike Johnson",
+    "contactRoute": "Congressional contact page or leadership desk",
+    "status": "Pending"
+  },
+  {
+    "id": "2",
+    "category": "Government & Elected Officials",
+    "title": "House Majority Leader",
+    "name": "Steve Scalise",
+    "contactRoute": "Congressional contact page or majority leader office",
+    "status": "Pending"
+  },
+  {
+    "id": "3",
+    "category": "Government & Elected Officials",
+    "title": "House Minority Leader",
+    "name": "Hakeem Jeffries",
+    "contactRoute": "Congressional contact page or Democratic leader desk",
+    "status": "Pending"
+  },
+  {
+    "id": "4",
+    "category": "Government & Elected Officials",
+    "title": "Senate Minority Leader",
+    "name": "Chuck Schumer",
+    "contactRoute": "Senate contact portal or leadership office",
+    "status": "Pending"
+  },
+  {
+    "id": "5",
+    "category": "Government & Elected Officials",
+    "title": "Governor of Michigan",
+    "name": "Gretchen Whitmer",
+    "contactRoute": "State of Michigan executive contact portal",
+    "status": "Pending"
+  },
+  {
+    "id": "6",
+    "category": "Government & Elected Officials",
+    "title": "Governor of California",
+    "name": "Gavin Newsom",
+    "contactRoute": "State of California executive contact form",
+    "status": "Pending"
+  },
+  {
+    "id": "7",
+    "category": "Government & Elected Officials",
+    "title": "Governor of Florida",
+    "name": "Ron DeSantis",
+    "contactRoute": "State of Florida executive contact form",
+    "status": "Pending"
+  },
+  {
+    "id": "8",
+    "category": "Government & Elected Officials",
+    "title": "US Senator (MI)",
+    "name": "Gary Peters",
+    "contactRoute": "Official Senate web form or regional service portal",
+    "status": "Pending"
+  },
+  {
+    "id": "9",
+    "category": "Government & Elected Officials",
+    "title": "US Senator (MI)",
+    "name": "Elissa Slotkin",
+    "contactRoute": "Official Senate web form or DC scheduling line",
+    "status": "Pending"
+  },
+  {
+    "id": "10",
+    "category": "Government & Elected Officials",
+    "title": "US Senator (VT)",
+    "name": "Bernie Sanders",
+    "contactRoute": "Official Senate web form or campaign media team",
+    "status": "Pending"
+  },
+  {
+    "id": "11",
+    "category": "Government & Elected Officials",
+    "title": "US Representative (NY)",
+    "name": "Alexandria Ocasio Cortez",
+    "contactRoute": "Congressional contact portal or campaign press desk",
+    "status": "Pending"
+  },
+  {
+    "id": "12",
+    "category": "Government & Elected Officials",
+    "title": "US Representative (CA)",
+    "name": "Ro Khanna",
+    "contactRoute": "Congressional contact portal or district outreach page",
+    "status": "Pending"
+  },
+  {
+    "id": "13",
+    "category": "Government & Elected Officials",
+    "title": "US Representative (MI)",
+    "name": "Rashida Tlaib",
+    "contactRoute": "Congressional contact portal or campaign media desk",
+    "status": "Pending"
+  },
+  {
+    "id": "14",
+    "category": "Government & Elected Officials",
+    "title": "US Representative (MN)",
+    "name": "Ilhan Omar",
+    "contactRoute": "Congressional contact portal or press relations team",
+    "status": "Pending"
+  },
+  {
+    "id": "15",
+    "category": "Government & Elected Officials",
+    "title": "US Representative (WA)",
+    "name": "Pramila Jayapal",
+    "contactRoute": "Congressional contact portal or caucus leadership office",
+    "status": "Pending"
+  },
+  {
+    "id": "16",
+    "category": "Government & Elected Officials",
+    "title": "State Assembly Member (NY)",
+    "name": "Zohran Mamdani",
+    "contactRoute": "New York State Assembly email or district web form",
+    "status": "Pending"
+  },
+  {
+    "id": "17",
+    "category": "Media & Data Analytics",
+    "title": "CNBC Anchor and NYT Columnist",
+    "name": "Andrew Ross Sorkin",
+    "contactRoute": "CNBC Squawk Box desk or NYT DealBook editorial email",
+    "status": "Pending"
+  },
+  {
+    "id": "18",
+    "category": "Media & Data Analytics",
+    "title": "National Political Correspondent",
+    "name": "Steve Kornacki",
+    "contactRoute": "NBC News press room or talent relations team",
+    "status": "Pending"
+  },
+  {
+    "id": "19",
+    "category": "Media & Data Analytics",
+    "title": "Senior Data Reporter",
+    "name": "Harry Enten",
+    "contactRoute": "CNN media communications desk or press channel",
+    "status": "Pending"
+  },
+  {
+    "id": "20",
+    "category": "Media & Data Analytics",
+    "title": "Founder of Silver Bulletin",
+    "name": "Nate Silver",
+    "contactRoute": "Substack business portal or media booking address",
+    "status": "Pending"
+  },
+  {
+    "id": "21",
+    "category": "Media & Data Analytics",
+    "title": "Senior Editor at Cook Political Report",
+    "name": "Dave Wasserman",
+    "contactRoute": "Cook Political Report media line or public desk",
+    "status": "Pending"
+  },
+  {
+    "id": "22",
+    "category": "Media & Data Analytics",
+    "title": "Analytics Editorial Director",
+    "name": "G. Elliott Morris",
+    "contactRoute": "ABC News communications desk or press room",
+    "status": "Pending"
+  },
+  {
+    "id": "23",
+    "category": "Media & Data Analytics",
+    "title": "Fox News Host and Contributor",
+    "name": "Jessica Tarlov",
+    "contactRoute": "Fox News media relations or show production team",
+    "status": "Pending"
+  },
+  {
+    "id": "24",
+    "category": "Media & Data Analytics",
+    "title": "Fox Business Host",
+    "name": "Charles Payne",
+    "contactRoute": "Fox Business PR office or talent communications team",
+    "status": "Pending"
+  },
+  {
+    "id": "25",
+    "category": "Independent Media & Organizations",
+    "title": "Independent Commentator",
+    "name": "Hasan Piker",
+    "contactRoute": "Business and booking email listed on social profiles",
+    "status": "Pending"
+  },
+  {
+    "id": "26",
+    "category": "Independent Media & Organizations",
+    "title": "Hosts of Breaking Points",
+    "name": "Krystal and Saagar",
+    "contactRoute": "Show tips submission page or press inquiry email",
+    "status": "Pending"
+  },
+  {
+    "id": "27",
+    "category": "Independent Media & Organizations",
+    "title": "Host of Secular Talk",
+    "name": "Kyle Kulinski",
+    "contactRoute": "Secular Talk show email or website contact page",
+    "status": "Pending"
+  },
+  {
+    "id": "28",
+    "category": "Independent Media & Organizations",
+    "title": "Founder of Tucker Carlson Network",
+    "name": "Tucker Carlson",
+    "contactRoute": "Network business contact page or booking portal",
+    "status": "Pending"
+  },
+  {
+    "id": "29",
+    "category": "Independent Media & Organizations",
+    "title": "Host of Last Week Tonight",
+    "name": "John Oliver",
+    "contactRoute": "HBO media relations or show production office",
+    "status": "Pending"
+  },
+  {
+    "id": "30",
+    "category": "Independent Media & Organizations",
+    "title": "Progressive Video Channel",
+    "name": "More Perfect Union",
+    "contactRoute": "Public business inquiry email on YouTube about page",
+    "status": "Pending"
+  },
+  {
+    "id": "31",
+    "category": "Independent Media & Organizations",
+    "title": "Host of The Majority Report",
+    "name": "Sam Seder",
+    "contactRoute": "Show tips email or live broadcast text line",
+    "status": "Pending"
+  },
+  {
+    "id": "32",
+    "category": "Independent Media & Organizations",
+    "title": "Host of The David Pakman Show",
+    "name": "David Pakman",
+    "contactRoute": "Official website contact form or media booking email",
+    "status": "Pending"
+  },
+  {
+    "id": "33",
+    "category": "Independent Media & Organizations",
+    "title": "Executive Producer at The Young Turks",
+    "name": "Ana Kasparian",
+    "contactRoute": "TYT network press desk or official business channel",
+    "status": "Pending"
+  },
+  {
+    "id": "34",
+    "category": "Independent Media & Organizations",
+    "title": "Video Commentator and Host",
+    "name": "Brian Tyler Cohen",
+    "contactRoute": "Public business inquiry email on YouTube about page",
+    "status": "Pending"
+  },
+  {
+    "id": "35",
+    "category": "Independent Media & Organizations",
+    "title": "Investigative Journalist",
+    "name": "Ryan Grim",
+    "contactRoute": "Drop Site News tips channel or Substack page",
+    "status": "Pending"
+  },
+  {
+    "id": "36",
+    "category": "Independent Media & Organizations",
+    "title": "Democratic National Committee",
+    "name": "DNC",
+    "contactRoute": "National headquarters contact form or tech team inquiry portal",
+    "status": "Pending"
+  },
+  {
+    "id": "37",
+    "category": "Independent Media & Organizations",
+    "title": "Republican National Committee",
+    "name": "RNC",
+    "contactRoute": "National headquarters contact form or official media office",
+    "status": "Pending"
+  },
+  {
+    "id": "38",
+    "category": "Independent Media & Organizations",
+    "title": "Political Organization",
+    "name": "DSA Party",
+    "contactRoute": "National organizational email or website contact portal",
+    "status": "Pending"
+  },
+  {
+    "id": "39",
+    "category": "Independent Media & Organizations",
+    "title": "Political Organization",
+    "name": "Our Revolution",
+    "contactRoute": "National organization main email or tech team network",
+    "status": "Pending"
+  },
+  {
+    "id": "40",
+    "category": "Independent Media & Organizations",
+    "title": "Independent Commentator / Journalist",
+    "name": "John Stossel",
+    "contactRoute": "Public business inquiry email or social profiles",
+    "status": "Pending"
+  },
+  {
+    "id": "41",
+    "category": "Independent Media & Organizations",
+    "title": "Writer / Commentator",
+    "name": "Graham Platner",
+    "contactRoute": "Substack or public business inquiry email",
+    "status": "Pending"
+  },
+  {
+    "id": "42",
+    "category": "Independent Media & Organizations",
+    "title": "Commentator / Creator",
+    "name": "Milat Kiros",
+    "contactRoute": "Public business inquiry email",
+    "status": "Pending"
+  },
+  {
+    "id": "43",
+    "category": "Independent Media & Organizations",
+    "title": "Political Commentator & Physician",
+    "name": "Abdul El-Sayed",
+    "contactRoute": "Public business inquiry email",
+    "status": "Pending"
+  },
+  {
+    "id": "44",
+    "category": "Independent Media & Organizations",
+    "title": "Political Figure / Commentator",
+    "name": "Andrew Wang",
+    "contactRoute": "Public business inquiry email",
+    "status": "Pending"
+  },
+  {
+    "id": "45",
+    "category": "Government & Elected Officials",
+    "title": "Senate Majority Leader",
+    "name": "John Thune",
+    "contactRoute": "Senate contact portal or leadership office",
+    "status": "Pending"
+  },
+  {
+    "id": "46",
+    "category": "Government & Elected Officials",
+    "title": "Vice President of the United States",
+    "name": "JD Vance",
+    "contactRoute": "White House contact form or VP office",
+    "status": "Pending"
+  },
+  {
+    "id": "47",
+    "category": "Government & Elected Officials",
+    "title": "President of the United States",
+    "name": "Donald Trump",
+    "contactRoute": "White House contact form or executive office",
+    "status": "Pending"
+  }
+]
