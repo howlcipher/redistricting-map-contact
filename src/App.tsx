@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Search, Mail, Building, Users, Activity } from 'lucide-react';
-import { contactData, Contact, ContactStatus } from './data';
+import { contactData } from './data';
+import type { Contact, ContactStatus } from './data';
 import './index.css';
 
 function App() {
