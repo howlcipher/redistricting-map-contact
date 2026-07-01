@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { Search, Mail, Building, Users, Activity, Sun, Moon, Code, Lock, Unlock, Loader2, Landmark, Megaphone, MessageSquare, X, RotateCcw, Check } from 'lucide-react';
 import type { Contact, ContactStatus } from './data';
 import './index.css';
@@ -23,6 +23,7 @@ function App() {
   const [selectedMessageContact, setSelectedMessageContact] = useState<Contact | null>(null);
   const [editingMessage, setEditingMessage] = useState<string | null>(null);
   const [saveSuccess, setSaveSuccess] = useState(false);
+  const saveTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   /**
    * Updates the global data-theme attribute on the root HTML element
@@ -99,7 +100,7 @@ function App() {
       const content = btoa(unescape(encodeURIComponent(JSON.stringify(updatedContacts, null, 2))));
 
       // 3. PUT request
-      await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
+      const putRes = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
         method: 'PUT',
         headers: {
           Authorization: `token ${githubToken}`,
@@ -112,6 +113,10 @@ function App() {
         })
       });
       
+      if (!putRes.ok) {
+        throw new Error(`GitHub API returned ${putRes.status}`);
+      }
+      
       setSaveSuccess(true);
       setTimeout(() => setSaveSuccess(false), 3000);
     } catch (err) {
@@ -120,6 +125,18 @@ function App() {
     } finally {
       setIsSaving(false);
     }
+  };
+
+  /**
+   * Debounces the GitHub API push to prevent 409 conflicts from rapid clicking.
+   */
+  const queueSaveToGithub = (updatedContacts: Contact[]) => {
+    if (saveTimeoutRef.current) {
+      clearTimeout(saveTimeoutRef.current);
+    }
+    saveTimeoutRef.current = setTimeout(() => {
+      updateStatusOnGithub(updatedContacts);
+    }, 750);
   };
 
   /**
@@ -135,21 +152,20 @@ function App() {
       return;
     }
     
-    const statuses: ContactStatus[] = ['Pending', 'Drafted', 'Sent', 'Replied', 'Unresponsive', 'Undeliverable'];
-    const updatedContacts = contacts.map(c => {
-      if (c.id === id) {
-        const currentIndex = statuses.indexOf(c.status);
-        const nextIndex = (currentIndex + 1) % statuses.length;
-        return { ...c, status: statuses[nextIndex] };
-      }
-      return c;
+    setContacts(prev => {
+      const statuses: ContactStatus[] = ['Pending', 'Drafted', 'Sent', 'Replied', 'Unresponsive', 'Undeliverable'];
+      const updatedContacts = prev.map(c => {
+        if (c.id === id) {
+          const currentIndex = statuses.indexOf(c.status);
+          const nextIndex = (currentIndex + 1) % statuses.length;
+          return { ...c, status: statuses[nextIndex] };
+        }
+        return c;
+      });
+      
+      queueSaveToGithub(updatedContacts);
+      return updatedContacts;
     });
-    
-    // Optimistic UI update
-    setContacts(updatedContacts);
-    
-    // Persist to GH
-    updateStatusOnGithub(updatedContacts);
   };
 
   /**
@@ -424,11 +440,13 @@ function App() {
                               className="icon-btn" 
                               style={{ padding: '0.25rem 0.5rem', fontSize: '0.75rem', color: 'var(--text-secondary)' }}
                               onClick={() => {
-                                const updatedContacts = contacts.map(c => 
-                                  c.id === contact.id ? { ...c, status: 'Pending' as ContactStatus } : c
-                                );
-                                setContacts(updatedContacts);
-                                updateStatusOnGithub(updatedContacts);
+                                setContacts(prev => {
+                                  const updatedContacts = prev.map(c => 
+                                    c.id === contact.id ? { ...c, status: 'Pending' as ContactStatus } : c
+                                  );
+                                  queueSaveToGithub(updatedContacts);
+                                  return updatedContacts;
+                                });
                               }}
                               title="Revert to Pending"
                             >
