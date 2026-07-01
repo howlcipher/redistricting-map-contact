@@ -29,9 +29,10 @@ function App() {
   // Initial load
   useEffect(() => {
     // Fetch from GitHub API if authenticated, else fetch static
+    const timestamp = new Date().getTime();
     const fetchUrl = githubToken 
-      ? `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}` 
-      : `${import.meta.env.BASE_URL}data.json?t=${new Date().getTime()}`;
+      ? `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}?ref=main&t=${timestamp}` 
+      : `${import.meta.env.BASE_URL}data.json?t=${timestamp}`;
 
     const headers: HeadersInit = githubToken ? { Authorization: `token ${githubToken}` } : {};
 
