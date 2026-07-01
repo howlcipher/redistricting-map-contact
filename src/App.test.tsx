@@ -1,6 +1,15 @@
-import { describe, it, expect, beforeEach } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import App from './App';
+
+// Mock fetch globally to prevent network requests during testing
+global.fetch = vi.fn(() =>
+  Promise.resolve({
+    json: () => Promise.resolve([
+      { id: '1', category: 'Government & Elected Officials', title: 'Speaker of the House', name: 'Mike Johnson', contactRoute: 'Congressional contact page', status: 'Pending' }
+    ])
+  })
+) as unknown as typeof fetch;
 
 describe('Redistricting Outreach Dashboard', () => {
   beforeEach(() => {
@@ -29,12 +38,14 @@ describe('Redistricting Outreach Dashboard', () => {
     expect(document.documentElement.getAttribute('data-theme')).toBe('dark');
   });
 
-  it('filters contacts based on search query', () => {
+  it('filters contacts based on search query', async () => {
     render(<App />);
     const searchInput = screen.getByPlaceholderText('Search contacts...');
     
     // Assuming "Mike Johnson" is in the initial data
-    expect(screen.getByText('Mike Johnson')).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText('Mike Johnson')).toBeInTheDocument();
+    });
     
     // Type something that doesn't exist
     fireEvent.change(searchInput, { target: { value: 'NonExistentPerson123' } });

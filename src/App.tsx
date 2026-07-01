@@ -1,31 +1,127 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Search, Mail, Building, Users, Activity, Sun, Moon } from 'lucide-react';
-import { contactData } from './data';
+import { Search, Mail, Building, Users, Activity, Sun, Moon, Code, Lock, Unlock, Loader2 } from 'lucide-react';
 import type { Contact, ContactStatus } from './data';
 import './index.css';
 
+const REPO_OWNER = 'howlcipher';
+const REPO_NAME = 'redistricting-map-contact';
+const FILE_PATH = 'public/data.json';
+
 function App() {
-  const [contacts, setContacts] = useState<Contact[]>(contactData);
+  const [contacts, setContacts] = useState<Contact[]>([]);
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
+  
+  // GitHub Auth State
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [githubToken, setGithubToken] = useState(localStorage.getItem('gh_token') || '');
+  const [isSaving, setIsSaving] = useState(false);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
-  const [searchQuery, setSearchQuery] = useState('');
+
+  // Initial load
+  useEffect(() => {
+    // Fetch from GitHub API if authenticated, else fetch static
+    const fetchUrl = githubToken 
+      ? `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}` 
+      : `${import.meta.env.BASE_URL}data.json?t=${new Date().getTime()}`;
+
+    const headers = githubToken ? { Authorization: `token ${githubToken}` } : {};
+
+    fetch(fetchUrl, { headers })
+      .then(res => res.json())
+      .then(data => {
+        if (githubToken && data.content) {
+          // Decode base64 if coming from GH API
+          const decoded = decodeURIComponent(escape(atob(data.content)));
+          setContacts(JSON.parse(decoded));
+        } else {
+          setContacts(data);
+        }
+        setIsLoading(false);
+      })
+      .catch(err => {
+        console.error('Failed to load contacts:', err);
+        setIsLoading(false);
+      });
+  }, [githubToken]);
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    localStorage.setItem('gh_token', githubToken);
+    setShowAuthModal(false);
+    window.location.reload(); 
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('gh_token');
+    setGithubToken('');
+    window.location.reload();
+  };
+
+  const updateStatusOnGithub = async (updatedContacts: Contact[]) => {
+    if (!githubToken) return;
+    setIsSaving(true);
+    try {
+      // 1. Get current SHA
+      const res = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
+        headers: { Authorization: `token ${githubToken}` }
+      });
+      const fileData = await res.json();
+      const sha = fileData.sha;
+
+      // 2. Prepare content
+      const content = btoa(unescape(encodeURIComponent(JSON.stringify(updatedContacts, null, 2))));
+
+      // 3. PUT request
+      await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
+        method: 'PUT',
+        headers: {
+          Authorization: `token ${githubToken}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          message: 'Update contact status',
+          content: content,
+          sha: sha
+        })
+      });
+    } catch (err) {
+      console.error('Failed to save to GitHub:', err);
+      alert('Failed to save changes. Check your token permissions.');
+    } finally {
+      setIsSaving(false);
+    }
+  };
 
   const handleStatusChange = (id: string) => {
+    if (!githubToken) {
+      alert("You must be logged in as an Admin to change statuses. Click Login in the top right.");
+      return;
+    }
+    
     const statuses: ContactStatus[] = ['Pending', 'Drafted', 'Sent', 'Replied', 'Unresponsive'];
-    setContacts(contacts.map(c => {
+    const updatedContacts = contacts.map(c => {
       if (c.id === id) {
         const currentIndex = statuses.indexOf(c.status);
         const nextIndex = (currentIndex + 1) % statuses.length;
         return { ...c, status: statuses[nextIndex] };
       }
       return c;
-    }));
+    });
+    
+    // Optimistic UI update
+    setContacts(updatedContacts);
+    
+    // Persist to GH
+    updateStatusOnGithub(updatedContacts);
   };
 
   const filteredContacts = useMemo(() => {
+    if (!Array.isArray(contacts)) return [];
     return contacts.filter(c => 
       c.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
       c.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -34,6 +130,7 @@ function App() {
   }, [contacts, searchQuery]);
 
   const stats = useMemo(() => {
+    if (!Array.isArray(contacts)) return { total: 0, pending: 0, sent: 0, replied: 0 };
     return {
       total: contacts.length,
       pending: contacts.filter(c => c.status === 'Pending').length,
@@ -56,17 +153,60 @@ function App() {
 
   return (
     <div className="dashboard-container">
+      {showAuthModal && (
+        <div className="modal-overlay" onClick={() => setShowAuthModal(false)}>
+          <div className="modal-content" onClick={e => e.stopPropagation()}>
+            <h2>Admin Login</h2>
+            <p>Enter a GitHub Personal Access Token with repo access to edit statuses.</p>
+            <form onSubmit={handleLogin}>
+              <input 
+                type="password" 
+                value={githubToken} 
+                onChange={(e) => setGithubToken(e.target.value)} 
+                placeholder="ghp_..." 
+                className="auth-input"
+                required
+              />
+              <div className="modal-actions">
+                <button type="button" onClick={() => setShowAuthModal(false)} className="btn-cancel">Cancel</button>
+                <button type="submit" className="btn-save">Save Token</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
       <header className="header">
-        <button 
-          className="theme-toggle" 
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-          aria-label="Toggle theme"
-          title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-        >
-          {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-        </button>
+        <div className="header-actions">
+          {githubToken ? (
+             <button onClick={handleLogout} className="icon-btn auth-btn" aria-label="Logout" title="Logout">
+              <Unlock size={18} /> Admin
+             </button>
+          ) : (
+            <button onClick={() => setShowAuthModal(true)} className="icon-btn auth-btn" aria-label="Login" title="Login">
+              <Lock size={18} /> Login
+            </button>
+          )}
+          <button 
+            className="icon-btn theme-toggle" 
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            aria-label="Toggle theme"
+            title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          >
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+        </div>
+
         <h1>Redistricting Outreach Dashboard</h1>
-        <p>Tracking communication for the algorithm-based state voting districts project.</p>
+        <p style={{ marginTop: '0.5rem' }}>
+          Tracking communication for the <a href="https://howlcipher.github.io/redistricting-map/" target="_blank" rel="noreferrer" className="highlight-link">algorithm-based state voting districts</a> project.
+        </p>
+        
+        <div className="header-links">
+          <a href="https://github.com/howlcipher/redistricting-map-contact" target="_blank" rel="noreferrer" className="repo-link">
+            <Code size={16} /> View on GitHub
+          </a>
+        </div>
       </header>
 
       <div className="stats-grid">
@@ -100,67 +240,77 @@ function App() {
               onChange={e => setSearchQuery(e.target.value)}
             />
           </div>
-          <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-            Click status badges to update
+          <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            {isSaving && <Loader2 size={14} className="spin" />}
+            {githubToken ? 'Click status badges to update' : 'Read-only mode (Login to edit)'}
           </div>
         </div>
 
-        <table className="data-table">
-          <thead>
-            <tr>
-              <th>Contact Details</th>
-              <th>Contact Route</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {Object.entries(groupedContacts).map(([category, catContacts]) => (
-              <React.Fragment key={category}>
-                <tr className="category-row">
-                  <td colSpan={3}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      {category === 'Government & Elected Officials' && <Building size={16} />}
-                      {category === 'Media & Data Analytics' && <Activity size={16} />}
-                      {category === 'Independent Media & Organizations' && <Users size={16} />}
-                      {category}
-                    </div>
-                  </td>
-                </tr>
-                {catContacts.map(contact => (
-                  <tr key={contact.id}>
-                    <td>
-                      <div className="contact-name">{contact.name}</div>
-                      <div className="contact-title">{contact.title}</div>
-                    </td>
-                    <td>
-                      <div className="contact-route">
-                        <Mail size={14} style={{ color: 'var(--accent-color)' }}/> 
-                        {contact.contactRoute}
+        {isLoading ? (
+          <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-secondary)' }}>
+            <Loader2 size={24} className="spin" style={{ margin: '0 auto 1rem' }} />
+            Loading contacts...
+          </div>
+        ) : (
+          <table className="data-table">
+            <thead>
+              <tr>
+                <th>Contact Details</th>
+                <th>Contact Route</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.entries(groupedContacts).map(([category, catContacts]) => (
+                <React.Fragment key={category}>
+                  <tr className="category-row">
+                    <td colSpan={3}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        {category === 'Government & Elected Officials' && <Building size={16} />}
+                        {category === 'Media & Data Analytics' && <Activity size={16} />}
+                        {category === 'Independent Media & Organizations' && <Users size={16} />}
+                        {category}
                       </div>
                     </td>
-                    <td>
-                      <button 
-                        className={`status-badge status-${contact.status}`}
-                        onClick={() => handleStatusChange(contact.id)}
-                      >
-                        {contact.status === 'Pending' && <div style={{width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'currentColor'}}></div>}
-                        {contact.status}
-                      </button>
-                    </td>
                   </tr>
-                ))}
-              </React.Fragment>
-            ))}
-            
-            {filteredContacts.length === 0 && (
-              <tr>
-                <td colSpan={3} style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-secondary)' }}>
-                  No contacts found matching "{searchQuery}"
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
+                  {catContacts.map(contact => (
+                    <tr key={contact.id}>
+                      <td>
+                        <div className="contact-name">{contact.name}</div>
+                        <div className="contact-title">{contact.title}</div>
+                      </td>
+                      <td>
+                        <div className="contact-route">
+                          <Mail size={14} style={{ color: 'var(--accent-color)' }}/> 
+                          {contact.contactRoute}
+                        </div>
+                      </td>
+                      <td>
+                        <button 
+                          className={`status-badge status-${contact.status}`}
+                          onClick={() => handleStatusChange(contact.id)}
+                          style={{ cursor: githubToken ? 'pointer' : 'default' }}
+                          title={githubToken ? 'Click to change status' : 'Login to change status'}
+                        >
+                          {contact.status === 'Pending' && <div style={{width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'currentColor'}}></div>}
+                          {contact.status}
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </React.Fragment>
+              ))}
+              
+              {filteredContacts.length === 0 && (
+                <tr>
+                  <td colSpan={3} style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-secondary)' }}>
+                    No contacts found matching "{searchQuery}"
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );
