@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "clear-data": "node -e \"require('fs').writeFileSync('public/data.json', '[]')\""
   },
   "dependencies": {
     "gh-pages": "^6.3.0",

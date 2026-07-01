@@ -1,11 +1,15 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { Search, Mail, Building, Users, Activity, Sun, Moon, Code, Lock, Unlock, Loader2, Landmark, Megaphone, MessageSquare, X, RotateCcw, Check, Plus, Edit2 } from 'lucide-react';
+import { Search, Mail, Building, Users, Activity, Sun, Moon, Code, Lock, Unlock, Loader2, Landmark, Megaphone, MessageSquare, X, RotateCcw, Check, Plus, Edit2, Briefcase, Globe, Heart, Shield, Star, Hash, Book, Music, Tv, Coffee, Cpu, Phone } from 'lucide-react';
 import type { Contact, ContactStatus } from './data';
 import './index.css';
 
 const REPO_OWNER = 'howlcipher';
 const REPO_NAME = 'redistricting-map-contact';
 const FILE_PATH = 'public/data.json';
+
+const ICON_MAP: Record<string, React.ElementType> = {
+  Building, Activity, Users, Landmark, Megaphone, Briefcase, Globe, Heart, Shield, Star, Hash, Book, Music, Tv, Coffee, Cpu, Phone
+};
 
 function App() {
   // --- Core Application State ---
@@ -29,12 +33,12 @@ function App() {
   const [showContactModal, setShowContactModal] = useState(false);
   const [editingContactId, setEditingContactId] = useState<string | null>(null);
   const [contactFormData, setContactFormData] = useState<Partial<Contact>>({
-    category: '', title: '', name: '', contactRoute: ''
+    category: '', categoryIcon: '', title: '', name: '', contactRoute: ''
   });
 
   const openAddContactModal = () => {
     setEditingContactId(null);
-    setContactFormData({ category: '', title: '', name: '', contactRoute: '' });
+    setContactFormData({ category: '', categoryIcon: '', title: '', name: '', contactRoute: '' });
     setShowContactModal(true);
   };
 
@@ -42,6 +46,7 @@ function App() {
     setEditingContactId(contact.id);
     setContactFormData({
       category: contact.category,
+      categoryIcon: contact.categoryIcon || '',
       title: contact.title,
       name: contact.name,
       contactRoute: contact.contactRoute
@@ -211,6 +216,7 @@ function App() {
           c.id === editingContactId ? { 
             ...c, 
             category: contactFormData.category as string,
+            categoryIcon: contactFormData.categoryIcon as string,
             title: contactFormData.title as string,
             name: contactFormData.name as string,
             contactRoute: contactFormData.contactRoute as string
@@ -226,6 +232,7 @@ function App() {
         const contactToAdd: Contact = {
           id: (maxId + 1).toString(),
           category: contactFormData.category as string,
+          categoryIcon: contactFormData.categoryIcon as string,
           title: contactFormData.title as string,
           name: contactFormData.name as string,
           contactRoute: contactFormData.contactRoute as string,
@@ -313,14 +320,27 @@ function App() {
             <form onSubmit={handleSaveContact}>
               <div style={{ marginBottom: '1rem' }}>
                 <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Category</label>
-                <input 
-                  type="text" 
-                  value={contactFormData.category} 
-                  onChange={(e) => setContactFormData({...contactFormData, category: e.target.value})} 
-                  placeholder="e.g. Independent Media & Organizations" 
-                  className="auth-input"
-                  required
-                />
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <select 
+                    value={contactFormData.categoryIcon || ''} 
+                    onChange={(e) => setContactFormData({...contactFormData, categoryIcon: e.target.value})}
+                    className="auth-input"
+                    style={{ flex: '0 0 auto', width: '100px' }}
+                  >
+                    <option value="" disabled>Icon</option>
+                    {Object.keys(ICON_MAP).map(icon => (
+                      <option key={icon} value={icon}>{icon}</option>
+                    ))}
+                  </select>
+                  <input 
+                    type="text" 
+                    value={contactFormData.category} 
+                    onChange={(e) => setContactFormData({...contactFormData, category: e.target.value})} 
+                    placeholder="e.g. Independent Media & Organizations" 
+                    className="auth-input"
+                    required
+                  />
+                </div>
               </div>
               <div style={{ marginBottom: '1rem' }}>
                 <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Name</label>
@@ -534,11 +554,19 @@ function App() {
                   <tr className="category-row">
                     <td colSpan={3}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        {category === 'Government & Elected Officials' && <Building size={16} />}
-                        {category === 'Media & Data Analytics' && <Activity size={16} />}
-                        {category === 'Independent Media & Organizations' && <Users size={16} />}
-                        {category === 'Political Parties' && <Landmark size={16} />}
-                        {category === 'Candidates for Office' && <Megaphone size={16} />}
+                        {(() => {
+                           let iconName = catContacts[0]?.categoryIcon;
+                           if (!iconName) {
+                             if (category === 'Government & Elected Officials') iconName = 'Building';
+                             else if (category === 'Media & Data Analytics') iconName = 'Activity';
+                             else if (category === 'Independent Media & Organizations') iconName = 'Users';
+                             else if (category === 'Political Parties') iconName = 'Landmark';
+                             else if (category === 'Candidates for Office') iconName = 'Megaphone';
+                             else iconName = 'Users';
+                           }
+                           const IconComponent = ICON_MAP[iconName] || Users;
+                           return <IconComponent size={16} />;
+                        })()}
                         {category}
                       </div>
                     </td>

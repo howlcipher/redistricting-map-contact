@@ -3,6 +3,7 @@ export type ContactStatus = 'Pending' | 'Drafted' | 'Sent' | 'Replied' | 'Unresp
 export interface Contact {
   id: string;
   category: string;
+  categoryIcon?: string;
   title: string;
   name: string;
   contactRoute: string;

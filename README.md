@@ -4,7 +4,22 @@
 ![License](https://img.shields.io/github/license/howlcipher/redistricting-map-contact?style=for-the-badge&color=B31942)
 ![Last Commit](https://img.shields.io/github/last-commit/howlcipher/redistricting-map-contact?style=for-the-badge&color=0A3161)
 
-A premium dashboard built to track outreach to government officials, media, and political organizations regarding the algorithm-based state voting districts project.
+A premium dashboard built to track outreach to government officials, media, and political organizations regarding the algorithm-based state voting districts project. 
+
+## 🎯 What This Application Does Now
+
+This application serves as a **fully functional, serverless CRM and Outreach Tracker** that uses a GitHub repository as its backend database. 
+
+### Key Features:
+- **Serverless Architecture**: It reads and writes directly to `public/data.json` on your GitHub repository via the GitHub API, eliminating the need for a separate backend or database.
+- **Admin Dashboard**: Users with a GitHub Personal Access Token can log in to enter Admin mode.
+- **Dynamic Contact Management**: Admins can add new contacts, specify their category, and assign a customizable **Category Icon** (e.g. Building, Megaphone, Shield) via a dropdown form.
+- **Edit Existing Contacts**: Admins can hit the 'Edit' button on any row to fix typos, change categories, or update contact routes on the fly.
+- **One-Click Status Tracking**: Progress a contact through outreach phases: `Pending` -> `Drafted` -> `Sent` -> `Replied` -> `Unresponsive` -> `Undeliverable`.
+- **Public Response Logging**: If a contact is marked as "Replied", you can attach their exact message text in a modal for public viewing.
+- **Auto-Sorting**: Contacts are grouped logically by their assigned category and automatically sorted alphabetically by name.
+- **Conflict-Free Saving**: Changes are debounced and stamped with a unique cache-busting timestamp so rapid clicks never result in 409 API conflicts.
+- **Minimalist Retro Patriotic UI**: A beautifully clean interface with Old Glory accents and typewriter typography, featuring Dark/Light mode toggles.
 
 ## 🛠️ Built With
 
@@ -19,12 +34,40 @@ A premium dashboard built to track outreach to government officials, media, and 
 
 *Icons and badges sourced from [shields.io](https://shields.io/) and [devicon.dev](https://devicon.dev/).*
 
-## Features
-- **Minimalist Retro Patriotic UI**: A beautifully clean interface with Old Glory accents and typewriter typography.
-- **GitHub as a Database**: Edit your contact statuses live on the site by securely connecting with a GitHub Personal Access Token.
-- **Public Response Tracking**: Attach and display public statements directly to any contact marked as "Replied" using a clean modal overlay.
-- **Live Categorization**: Contacts are grouped logically and sorted alphabetically.
-- **Micro-Animations**: Vintage-inspired blocky shadows and button translations for a premium feel.
+---
+
+## 🚀 How to Fork & Use Your Own Tracker
+
+You can easily clone this project to use as a CRM/Tracker for your own campaigns! Because it uses GitHub as the database, hosting is 100% free.
+
+### 1. Fork the Repository
+Click the **Fork** button at the top right of this page to create your own copy.
+
+### 2. Update Repository Pointers
+In `src/App.tsx`, update the `REPO_OWNER` and `REPO_NAME` constants at the top of the file to match your GitHub username and repository name.
+Update `package.json` and `vite.config.ts` if your GitHub Pages base URL changes.
+
+### 3. Clear Existing Data
+You don't want the default contacts. We've included a script to wipe the database clean instantly:
+```bash
+npm run clear-data
+```
+This empties `public/data.json`. Add, commit, and push this change to your repository.
+
+### 4. Enable GitHub Pages
+Go to your repository **Settings > Pages**. Set the source to **GitHub Actions** or the `gh-pages` branch. 
+Run the deployment script to push the site live:
+```bash
+npm run deploy
+```
+
+### 5. Generate a Personal Access Token
+To use Admin Mode on your live site, you need a token.
+1. Go to your GitHub **Settings > Developer Settings > Personal Access Tokens > Tokens (classic)**.
+2. Generate a new token and give it **`repo`** scope permissions.
+3. Go to your live deployed site, click **Login**, and paste this token. You can now securely edit, add, and organize your own contacts live!
+
+---
 
 ## Development
 
