@@ -83,4 +83,45 @@ describe('Redistricting Outreach Dashboard', () => {
     expect(screen.getByText('Response from John Oliver')).toBeInTheDocument();
     expect(screen.getByText('We will cover this')).toBeInTheDocument();
   });
+
+  it('renders login form and logs in as Admin', async () => {
+    await renderAppAndWait();
+    
+    // Initially Add Contact shouldn't be visible
+    expect(screen.queryByText('Add Contact')).not.toBeInTheDocument();
+    
+    // Click login
+    fireEvent.click(screen.getByText('Login'));
+    
+    // Wait for the modal and type the token
+    const tokenInput = screen.getByPlaceholderText('ghp_...');
+    fireEvent.change(tokenInput, { target: { value: 'test-token' } });
+    
+    // Submit the form
+    fireEvent.click(screen.getByText('Save Token'));
+    
+    // Wait for Add Contact to appear
+    await waitFor(() => {
+      expect(screen.getByText('Add Contact')).toBeInTheDocument();
+    });
+  });
+
+  it('opens Add Contact modal when Admin', async () => {
+    await renderAppAndWait();
+    
+    // Login flow
+    fireEvent.click(screen.getByText('Login'));
+    const tokenInput = screen.getByPlaceholderText('ghp_...');
+    fireEvent.change(tokenInput, { target: { value: 'test-token' } });
+    fireEvent.click(screen.getByText('Save Token'));
+    
+    await waitFor(() => {
+      expect(screen.getByText('Add Contact')).toBeInTheDocument();
+    });
+    
+    fireEvent.click(screen.getByText('Add Contact'));
+    
+    expect(screen.getByText('Add New Contact')).toBeInTheDocument();
+    expect(screen.getByPlaceholderText('e.g. Independent Media & Organizations')).toBeInTheDocument();
+  });
 });
