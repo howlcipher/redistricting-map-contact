@@ -54,6 +54,17 @@ For a comprehensive breakdown of the mathematics, algorithms, and how to interpr
 
 ---
 
+## ⚠️ Potential Pitfalls & Limitations
+
+Since this dashboard uses a purely serverless, GitHub-driven architecture, there are a few technical and operational limitations to be aware of:
+
+- **Browser Security**: The GitHub Personal Access Token (PAT) used for Admin Mode is stored in your browser's `localStorage`. Ensure you only log in on trusted, private devices. If your device is compromised, your token could be extracted.
+- **Concurrent Editing**: If multiple admins attempt to edit the dashboard at the exact same moment, the last save will overwrite previous ones. While the system prevents stale data conflicts for a single user, it does not support real-time collaborative editing (like Google Docs).
+- **Data Scaling**: The entire database is a single `public/data.json` file. This is highly efficient and lightning-fast for hundreds or even thousands of contacts, but it is not built to scale to millions of entries without implementing pagination.
+- **API Rate Limits**: Editing contacts relies on the GitHub REST API. Authenticated requests are limited to 5,000 per hour. While this is exceptionally high for manual data entry, aggressive automated scripts interacting with the frontend could trigger throttling.
+
+---
+
 ## 🚀 How to Fork & Use Your Own Tracker
 
 You can easily clone this project to use as a CRM/Tracker for your own campaigns! Because it uses GitHub as the database, hosting is 100% free.
