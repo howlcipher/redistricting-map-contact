@@ -69,6 +69,13 @@ To use Admin Mode on your live site, you need a token.
 
 ---
 
+## 📜 Changelog
+
+Keep track of all the latest features, bug fixes, and improvements we've added to the dashboard. 
+👉 **[Read the Full Changelog](./CHANGELOG.md)**
+
+---
+
 ## Development
 
 1. Install dependencies:
