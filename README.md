@@ -36,35 +36,6 @@ This application serves as a **fully functional, serverless CRM and Outreach Tra
 
 ---
 
-## 📦 Data Sourcing & Geometries
-
-The data utilized in the primary redistricting algorithm project—including demographic metrics, shapefiles, and geographical geometries—is strictly maintained in the core repository: **[howlcipher/redistricting-map](https://github.com/howlcipher/redistricting-map)**. 
-
-This contact dashboard focuses exclusively on the outreach and tracking component of the project. It uses a lightweight `data.json` structure to map entities and their corresponding contact status without bundling heavy map topologies or algorithms.
-
----
-
-## 📐 Mathematical & Open-Source Legitimacy (TL;DR)
-
-This project fundamentally shifts the redistricting paradigm by removing human bias. Utilizing **Markov Chain Monte Carlo (MCMC)** and **ReCom** algorithms, it generates mathematically verifiable, strictly fair state voting districts based on natural political geography. 
-
-By making the codebase open-source and the metrics (such as the Efficiency Gap) fully transparent, anyone can independently verify the fairness of a map or detect artificial skewing. 
-
-For a comprehensive breakdown of the mathematics, algorithms, and how to interpret the data, please read the **[Mathematical & Open-Source Legitimacy Guide](./GUIDE.md)**.
-
----
-
-## ⚠️ Potential Pitfalls & Limitations
-
-Since this dashboard uses a purely serverless, GitHub-driven architecture, there are a few technical and operational limitations to be aware of:
-
-- **Browser Security**: The GitHub Personal Access Token (PAT) used for Admin Mode is stored in your browser's `localStorage`. Ensure you only log in on trusted, private devices. If your device is compromised, your token could be extracted.
-- **Concurrent Editing**: If multiple admins attempt to edit the dashboard at the exact same moment, the last save will overwrite previous ones. While the system prevents stale data conflicts for a single user, it does not support real-time collaborative editing (like Google Docs).
-- **Data Scaling**: The entire database is a single `public/data.json` file. This is highly efficient and lightning-fast for hundreds or even thousands of contacts, but it is not built to scale to millions of entries without implementing pagination.
-- **API Rate Limits**: Editing contacts relies on the GitHub REST API. Authenticated requests are limited to 5,000 per hour. While this is exceptionally high for manual data entry, aggressive automated scripts interacting with the frontend could trigger throttling.
-
----
-
 ## 🚀 How to Fork & Use Your Own Tracker
 
 You can easily clone this project to use as a CRM/Tracker for your own campaigns! Because it uses GitHub as the database, hosting is 100% free.
@@ -72,9 +43,9 @@ You can easily clone this project to use as a CRM/Tracker for your own campaigns
 ### 1. Fork the Repository
 Click the **Fork** button at the top right of this page to create your own copy.
 
-### 2. Third-Party Data Integration
-To integrate your own third-party data backend via the GitHub API, open `src/App.tsx` and update the `REPO_OWNER` and `REPO_NAME` constants at the top of the file to match your GitHub username and repository name.
-Also update `package.json` and `vite.config.ts` if your GitHub Pages base URL changes.
+### 2. Update Repository Pointers
+In `src/App.tsx`, update the `REPO_OWNER` and `REPO_NAME` constants at the top of the file to match your GitHub username and repository name.
+Update `package.json` and `vite.config.ts` if your GitHub Pages base URL changes.
 
 ### 3. Clear Existing Data
 You don't want the default contacts. We've included a script to wipe the database clean instantly:
