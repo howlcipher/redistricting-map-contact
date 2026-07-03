@@ -44,6 +44,16 @@ This contact dashboard focuses exclusively on the outreach and tracking componen
 
 ---
 
+## 📐 Mathematical & Open-Source Legitimacy (TL;DR)
+
+This project fundamentally shifts the redistricting paradigm by removing human bias. Utilizing **Markov Chain Monte Carlo (MCMC)** and **ReCom** algorithms, it generates mathematically verifiable, strictly fair state voting districts based on natural political geography. 
+
+By making the codebase open-source and the metrics (such as the Efficiency Gap) fully transparent, anyone can independently verify the fairness of a map or detect artificial skewing. 
+
+For a comprehensive breakdown of the mathematics, algorithms, and how to interpret the data, please read the **[Mathematical & Open-Source Legitimacy Guide](./GUIDE.md)**.
+
+---
+
 ## 🚀 How to Fork & Use Your Own Tracker
 
 You can easily clone this project to use as a CRM/Tracker for your own campaigns! Because it uses GitHub as the database, hosting is 100% free.
