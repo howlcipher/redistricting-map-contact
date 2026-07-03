@@ -43,9 +43,9 @@ You can easily clone this project to use as a CRM/Tracker for your own campaigns
 ### 1. Fork the Repository
 Click the **Fork** button at the top right of this page to create your own copy.
 
-### 2. Update Repository Pointers
-In `src/App.tsx`, update the `REPO_OWNER` and `REPO_NAME` constants at the top of the file to match your GitHub username and repository name.
-Update `package.json` and `vite.config.ts` if your GitHub Pages base URL changes.
+### 2. Third-Party Data Integration
+To integrate your own third-party data backend via the GitHub API, open `src/App.tsx` and update the `REPO_OWNER` and `REPO_NAME` constants at the top of the file to match your GitHub username and repository name.
+Also update `package.json` and `vite.config.ts` if your GitHub Pages base URL changes.
 
 ### 3. Clear Existing Data
 You don't want the default contacts. We've included a script to wipe the database clean instantly:
