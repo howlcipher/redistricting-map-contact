@@ -21,8 +21,9 @@
     "category": "Candidates for Office",
     "title": "Candidate for U.S. House (CO-1)",
     "name": "Milat Kiros",
-    "contactRoute": "Contact Form: kirosforco.com",
-    "status": "Pending"
+    "contactRoute": "info@kirosforco.com",
+    "status": "Pending",
+    "categoryIcon": ""
   },
   {
     "id": "11",
