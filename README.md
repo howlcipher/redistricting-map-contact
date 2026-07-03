@@ -36,6 +36,14 @@ This application serves as a **fully functional, serverless CRM and Outreach Tra
 
 ---
 
+## 📦 Data Sourcing & Geometries
+
+The data utilized in the primary redistricting algorithm project—including demographic metrics, shapefiles, and geographical geometries—is strictly maintained in the core repository: **[howlcipher/redistricting-map](https://github.com/howlcipher/redistricting-map)**. 
+
+This contact dashboard focuses exclusively on the outreach and tracking component of the project. It uses a lightweight `data.json` structure to map entities and their corresponding contact status without bundling heavy map topologies or algorithms.
+
+---
+
 ## 🚀 How to Fork & Use Your Own Tracker
 
 You can easily clone this project to use as a CRM/Tracker for your own campaigns! Because it uses GitHub as the database, hosting is 100% free.
