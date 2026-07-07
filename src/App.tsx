@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { Search, Mail, Building, Users, Activity, Sun, Moon, Code, Lock, Unlock, Loader2, Landmark, Megaphone, MessageSquare, X, RotateCcw, Check, Plus, Edit2, Briefcase, Globe, Heart, Shield, Star, Hash, Book, Music, Tv, Coffee, Cpu, Phone } from 'lucide-react';
+import { Search, Mail, Building, Users, Activity, Sun, Moon, Code, Lock, Unlock, Loader2, Landmark, Megaphone, MessageSquare, X, RotateCcw, Check, Plus, Edit2, Trash2, Briefcase, Globe, Heart, Shield, Star, Hash, Book, Music, Tv, Coffee, Cpu, Phone } from 'lucide-react';
 import type { Contact, ContactStatus } from './data';
 import './index.css';
 
@@ -167,6 +167,17 @@ function App() {
     saveTimeoutRef.current = setTimeout(() => {
       updateStatusOnGithub(updatedContacts);
     }, 750);
+  };
+
+  const handleDeleteContact = (id: string) => {
+    if (!githubToken) return;
+    if (!window.confirm("Are you sure you want to delete this contact?")) return;
+    
+    setContacts(prev => {
+      const updatedContacts = prev.filter(c => c.id !== id);
+      queueSaveToGithub(updatedContacts);
+      return updatedContacts;
+    });
   };
 
   /**
@@ -620,8 +631,7 @@ function App() {
                             </button>
                           )}
 
-                          {githubToken && contact.status !== 'Pending' && (
-                            <button 
+                                <button 
                               className="icon-btn" 
                               style={{ padding: '0.25rem 0.5rem', fontSize: '0.75rem', color: 'var(--text-secondary)' }}
                               onClick={() => {
@@ -636,6 +646,17 @@ function App() {
                               title="Revert to Pending"
                             >
                               <RotateCcw size={12} /> Revert
+                            </button>
+                          )}
+
+                          {githubToken && (
+                            <button 
+                              className="icon-btn" 
+                              style={{ padding: '0.25rem 0.5rem', fontSize: '0.75rem', color: '#ff4444' }}
+                              onClick={() => handleDeleteContact(contact.id)}
+                              title="Delete Contact"
+                            >
+                              <Trash2 size={12} /> Delete
                             </button>
                           )}
                         </div>
