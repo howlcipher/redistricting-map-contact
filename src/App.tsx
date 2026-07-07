@@ -631,7 +631,8 @@ function App() {
                             </button>
                           )}
 
-                                <button 
+                          {githubToken && contact.status !== 'Pending' && (
+                            <button 
                               className="icon-btn" 
                               style={{ padding: '0.25rem 0.5rem', fontSize: '0.75rem', color: 'var(--text-secondary)' }}
                               onClick={() => {
