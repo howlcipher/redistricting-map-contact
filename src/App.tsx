@@ -493,6 +493,9 @@ function App() {
         </p>
         
         <div className="header-links">
+          <a href="https://howlcipher.github.io/william_elias/" target="_blank" rel="noreferrer" className="repo-link">
+            <Globe size={16} /> William Elias
+          </a>
           <a href="https://github.com/howlcipher/redistricting-map-contact" target="_blank" rel="noreferrer" className="repo-link">
             <Code size={16} /> View on GitHub
           </a>
